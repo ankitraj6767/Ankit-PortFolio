@@ -156,26 +156,6 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="card-surface flex flex-col gap-3 p-5 sm:p-6 shadow-lg shadow-cyan-500/5 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-green-500/15 text-green-400 shadow shadow-green-500/30">
-          <FaWhatsapp size={28} />
-        </div>
-        <div className="text-lg font-semibold text-slate-50">WhatsApp</div>
-        <p className="text-sm text-slate-400">
-          Prefer quick chat? Ping me directly on WhatsApp and let me know how I can help.
-        </p>
-        <div className="flex justify-center">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 px-5 py-3 text-sm font-semibold text-emerald-950 shadow-lg shadow-green-500/30 transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-400/70 focus:ring-offset-2 focus:ring-offset-ink"
-          >
-            <FaWhatsapp />
-            Chat on WhatsApp
-          </a>
-        </div>
-      </div>
     </section>
   )
 }
