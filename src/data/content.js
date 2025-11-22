@@ -81,14 +81,14 @@ export const projects = [
     description:
       'Full-stack electronics e-commerce platform with category filters, secure auth, and checkout flows.',
     tech: ['React', 'Redux', 'Styled Components', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
-    github: null,
+    github: 'https://github.com/ankitraj6767/saiEnterprise',
   },
   {
     title: 'Covid-19 Tracker',
     description:
       'Responsive dashboard displaying real-time COVID-19 statistics for any country or region.',
     tech: ['React', 'REST APIs', 'Tailwind', 'Data Visualization'],
-    github: null,
+    github: 'https://github.com/ankitraj6767/covid19_tracker',
   },
 ]
 

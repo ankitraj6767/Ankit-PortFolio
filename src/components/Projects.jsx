@@ -49,10 +49,7 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-            <div className="mt-5 flex items-center gap-2 text-sm text-cyan-200">
-              <FiArrowUpRight />
-              <span>Demos and code walkthroughs are available on request.</span>
-            </div>
+            
           </article>
         ))}
       </div>
