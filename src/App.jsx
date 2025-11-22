@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import SectionHeader from './components/SectionHeader'
 import Footer from './components/Footer'
 import FloatingWhatsapp from './components/FloatingWhatsapp'
+import ScrollToTop from './components/ScrollToTop'
 
 const Page = ({ children }) => (
   <main className="flex flex-col gap-16 sm:gap-20 pt-20 sm:pt-24 pb-32 lg:pb-36">
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative overflow-x-hidden">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route
