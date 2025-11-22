@@ -3,9 +3,10 @@ import { fadeInUp } from '../utils/motion'
 
 const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
   const isCenter = align === 'center'
+  const MotionDiv = motion.div
 
   return (
-    <motion.div
+    <MotionDiv
       className={`flex w-full flex-col gap-3 ${isCenter ? 'items-center justify-center text-center' : ''}`}
       {...fadeInUp}
     >
@@ -19,7 +20,7 @@ const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
           {description}
         </p>
       )}
-    </motion.div>
+    </MotionDiv>
   )
 }
 

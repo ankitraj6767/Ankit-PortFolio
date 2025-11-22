@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
-import { FaWhatsapp } from 'react-icons/fa'
 import { socialLinks } from '../data/content'
 import SectionHeader from './SectionHeader'
 
@@ -37,8 +36,6 @@ const Contact = () => {
         setTimeout(() => setStatus(''), 5000)
       })
   }
-
-  const whatsappLink = 'https://wa.me/916200667346?text=Hi%20Ankit%2C%20I%20need%20your%20help'
 
   return (
     <section id="contact" className="section-container scroll-mt-24 space-y-6 pb-16">

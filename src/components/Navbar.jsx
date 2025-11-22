@@ -3,6 +3,26 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { Link, useLocation } from 'react-router-dom'
 import { navLinks, resumeLink } from '../data/content'
 
+const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
+  <div className={`${isMobile ? 'flex flex-col gap-4 py-4' : 'hidden md:flex items-center gap-3 lg:gap-5'}`}>
+    {navLinks.map(({ label, href }) => {
+      const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
+      return (
+        <Link
+          key={href}
+          to={href}
+          onClick={onNavigate}
+          className={`text-sm font-medium transition-colors ${
+            isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
+          }`}
+        >
+          {label}
+        </Link>
+      )
+    })}
+  </div>
+)
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [elevated, setElevated] = useState(false)
@@ -14,29 +34,6 @@ const Navbar = () => {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
-
-  const NavLinks = ({ isMobile = false }) => (
-    <div className={`${isMobile ? 'flex flex-col gap-4 py-4' : 'hidden md:flex items-center gap-3 lg:gap-5'}`}>
-      {navLinks.map(({ label, href }) => {
-        const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
-        return (
-          <Link
-            key={href}
-            to={href}
-            className={`text-sm font-medium transition-colors ${
-              isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
-            }`}
-          >
-            {label}
-          </Link>
-        )
-      })}
-    </div>
-  )
 
   return (
     <nav
@@ -55,7 +52,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <NavLinks />
+        <NavLinks pathname={pathname} />
 
         <div className="hidden items-center gap-3 md:flex">
           <a
@@ -81,9 +78,10 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden border-t border-slate-800/60 bg-card/90 px-6 pb-4 backdrop-blur">
-          <NavLinks isMobile />
+          <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
           <a
             href={resumeLink}
+            onClick={() => setIsOpen(false)}
             className="mt-2 inline-flex w-full items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition hover:-translate-y-0.5 hover:border-cyan-300/60"
             target="_blank"
             rel="noreferrer"
