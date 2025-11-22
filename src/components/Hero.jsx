@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="section-container relative flex min-h-screen flex-col justify-center gap-12 pt-28 pb-16"
+      className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-10 top-10 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
@@ -14,8 +14,8 @@ const Hero = () => {
         <div className="absolute bottom-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[90px]" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <div className="flex max-w-3xl flex-col items-center gap-6 text-center">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div className="flex max-w-3xl flex-col items-center gap-5 text-center">
           <div className="flex w-full items-center justify-center gap-4">
             <div className="flex h-64 w-64 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 shadow-lg shadow-cyan-500/20">
               <img
