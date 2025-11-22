@@ -21,7 +21,7 @@ const Hero = () => {
               <img
                 src="/profile.png"
                 alt="Ankit Raj portrait"
-                className="h-60 w-60 rounded-full object-cover object-center"
+                className="h-60 w-60 rounded-full object-cover object-top"
               />
             </div>
           </div>
