@@ -1,8 +1,14 @@
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../utils/motion'
+
 const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
   const isCenter = align === 'center'
 
   return (
-    <div className={`flex flex-col gap-3 ${isCenter ? 'items-center text-center' : ''}`}>
+    <motion.div
+      className={`flex w-full flex-col gap-3 ${isCenter ? 'items-center justify-center text-center' : ''}`}
+      {...fadeInUp}
+    >
       <div className={`flex items-center gap-3 ${isCenter ? 'justify-center' : ''}`}>
         <span className="h-px w-8 bg-gradient-to-r from-cyan-300/70 to-blue-400/70" />
         <span className="text-sm uppercase tracking-[0.2em] text-slate-400">{eyebrow}</span>
@@ -13,7 +19,7 @@ const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
           {description}
         </p>
       )}
-    </div>
+    </motion.div>
   )
 }
 
