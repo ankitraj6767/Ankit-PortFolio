@@ -12,7 +12,6 @@ const Experience = () => {
       />
 
       <div className="relative space-y-8 border-l border-slate-800/70 pl-6">
-        <span className="absolute left-[-4px] top-2 h-3 w-3 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 shadow-lg shadow-cyan-500/20" />
         {experiences.map((exp, idx) => (
           <div key={exp.company + exp.role} className="relative">
             <div className="absolute -left-[13px] top-2 h-2.5 w-2.5 rounded-full bg-cyan-400 shadow shadow-cyan-500/40" />
