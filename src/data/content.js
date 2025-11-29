@@ -77,11 +77,26 @@ export const skillLevels = [
 
 export const projects = [
   {
-    title: 'Ecommerce Website',
+    title: 'ShopHub E-commerce',
     description:
-      'Full-stack electronics e-commerce platform with category filters, secure auth, and checkout flows.',
-    tech: ['React', 'Redux', 'Styled Components', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
-    github: 'https://github.com/ankitraj6767/saiEnterprise',
+      'Full-stack commerce platform with deals, flash sales, premium tiers, gift cards, and admin analytics.',
+    tech: [
+      'React',
+      'Redux Toolkit',
+      'Tailwind CSS',
+      'Framer Motion',
+      'React Router',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'JWT',
+      'bcrypt',
+      'Cloudinary',
+      'Razorpay',
+      'Nodemailer',
+    ],
+    website: 'https://shophub-five.vercel.app/',
   },
   {
     title: 'Covid-19 Tracker',

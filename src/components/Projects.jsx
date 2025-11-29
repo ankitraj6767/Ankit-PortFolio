@@ -23,15 +23,16 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold text-slate-50">{project.title}</h3>
                 <p className="mt-2 text-sm text-slate-400">{project.description}</p>
               </div>
-              {project.github ? (
+              {project.website || project.github ? (
                 <a
-                  href={project.github}
+                  href={project.website || project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-slate-800 bg-slate-900/60 p-2 text-slate-200 transition hover:border-cyan-400/40 hover:text-cyan-100"
-                  aria-label={`View ${project.title} on GitHub`}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyan-400/40 hover:text-cyan-100"
+                  aria-label={`View ${project.title} ${project.website ? 'live site' : 'on GitHub'}`}
                 >
-                  <FiGithub />
+                  {project.website ? <FiArrowUpRight /> : <FiGithub />}
+                  {project.website ? 'Live' : 'Code'}
                 </a>
               ) : (
                 <div className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs font-medium text-slate-300">
