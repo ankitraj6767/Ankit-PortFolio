@@ -79,7 +79,7 @@ export const projects = [
   {
     title: 'ShopHub E-commerce',
     description:
-      'Full-stack commerce platform with deals, flash sales, premium tiers, gift cards, and admin analytics.',
+      'Full-stack commerce platform with dynamic deals, flash sales, premium subscriptions, gift cards, product comparison, wishlist, real-time notifications, and an admin analytics dashboard with revenue tracking.',
     tech: [
       'React',
       'Redux Toolkit',
@@ -99,9 +99,9 @@ export const projects = [
     website: 'https://shophub-five.vercel.app/',
   },
   {
-    title: 'CosmoScope - NASA Space Insight Dashboard',
+    title: 'CosmoScope - NASA Space Dashboard',
     description:
-      'Interactive dashboard showcasing NASA open data: APOD, Earth imagery, asteroid tracking, and space weather.',
+      'Interactive dashboard that pulls NASA open data—Astronomy Picture of the Day, Earth satellite imagery, asteroid tracking, and space weather—into a responsive, animated experience.',
     tech: ['React', 'Tailwind CSS', 'NASA APIs', 'Data Visualization'],
     website: 'https://cosmoscopes-ankitraj.netlify.app/',
   },
@@ -113,8 +113,8 @@ export const experiences = [
     company: 'Blue Yonder India Private Limited',
     duration: 'July 2024 — Present',
     achievements: [
-      'Contributing as a backend developer to the Multi-Dimensional Analytics Platform in the MAAS team using Spring Boot.',
-      'Collaborate across teams to tune services for faster responses and higher reliability.',
+      'Core backend contributor for MDAP, designing and developing major Spring Boot CRUD APIs and Kafka pipelines powering critical data flows.',
+      'Collaborate with cross-functional teams to ship reliable, high-performance backend services and support end-to-end feature delivery with React + TypeScript.',
     ],
   },
   {
@@ -122,8 +122,8 @@ export const experiences = [
     company: 'Blue Yonder India Private Limited',
     duration: 'January 2024 — June 2024',
     achievements: [
-      'Developed and maintained backend services with Spring Boot for the Multi-Dimensional Analytic Platform (MDAP).',
-      'Integrated Apache Kafka for real-time data processing to keep MDAP services running smoothly.',
+      'Implemented Spring Boot services and integrated Kafka for real-time data processing on the MDAP platform.',
+      'Improved existing components, debugged issues, and helped deliver reliable features during Agile sprints.',
     ],
   },
 ]
