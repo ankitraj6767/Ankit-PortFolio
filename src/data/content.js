@@ -174,7 +174,7 @@ export const education = [
   },
 ]
 
-export const resumeLink = '/resume.pdf'
+export const resumeLink = '/resume.pdf?v=2'
 
 export const techStackPreview = [
 'Java',
