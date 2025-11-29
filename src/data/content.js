@@ -99,11 +99,11 @@ export const projects = [
     website: 'https://shophub-five.vercel.app/',
   },
   {
-    title: 'Covid-19 Tracker',
+    title: 'CosmoScope - NASA Space Insight Dashboard',
     description:
-      'Responsive dashboard displaying real-time COVID-19 statistics for any country or region.',
-    tech: ['React', 'REST APIs', 'Tailwind', 'Data Visualization'],
-    github: 'https://github.com/ankitraj6767/covid19_tracker',
+      'Interactive dashboard showcasing NASA open data: APOD, Earth imagery, asteroid tracking, and space weather.',
+    tech: ['React', 'Tailwind CSS', 'NASA APIs', 'Data Visualization'],
+    website: 'https://cosmoscopes-ankitraj.netlify.app/',
   },
 ]
 
