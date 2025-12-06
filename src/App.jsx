@@ -35,9 +35,10 @@ const NotFound = () => (
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative overflow-x-hidden">
+      <div className="relative overflow-x-hidden min-h-screen flex flex-col">
         <ScrollToTop />
         <Navbar />
+        <div className="flex-1">
         <Routes>
           <Route
             path="/"
@@ -97,6 +98,7 @@ const App = () => {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
         <Footer />
         <FloatingWhatsapp />
       </div>
