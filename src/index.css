@@ -8,57 +8,79 @@
 :root {
   color-scheme: dark;
   scroll-behavior: smooth;
-  --grid-overlay: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
 }
 
 /* Hide scrollbar but keep scrolling */
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 body {
-  @apply bg-ink text-slate-100 font-grotesk;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.08), transparent 25%),
-    radial-gradient(circle at 80% 0%, rgba(96, 165, 250, 0.12), transparent 32%),
-    linear-gradient(145deg, #0b1224 0%, #0c182d 50%, #0f172a 100%),
-    var(--grid-overlay);
-  background-size: 380px 380px, 520px 520px, 100% 100%, 48px 48px;
+  @apply text-slate-100 font-grotesk;
   min-height: 100vh;
   margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  background: #0a0a0f;
 }
 
+/* ========================================
+   REFINED COSMIC DESIGN - READABLE
+   ======================================== */
+
+/* Subtle Ambient Glow - Top Right */
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(40% 60% at 20% 30%, rgba(34, 211, 238, 0.18), transparent),
-    radial-gradient(35% 55% at 80% 10%, rgba(96, 165, 250, 0.15), transparent),
-    radial-gradient(45% 65% at 50% 80%, rgba(14, 165, 233, 0.12), transparent);
-  filter: blur(40px);
-  animation: aurora-shift 18s ease-in-out infinite alternate;
+  top: -40%;
+  right: -30%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 700px;
+  max-height: 700px;
   z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+  filter: blur(80px);
 }
 
-@keyframes aurora-shift {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translate3d(2%, -1%, 0);
-    opacity: 0.95;
-  }
-  100% {
-    transform: translate3d(-2%, 2%, 0);
-    opacity: 1;
-  }
+/* Secondary Glow - Bottom Left */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -50%;
+  left: -30%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+  filter: blur(100px);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Very Subtle Grid */
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.015) 1px, transparent 0);
+  background-size: 48px 48px;
 }
 
 ::selection {
@@ -71,7 +93,19 @@ body::before {
 }
 
 .card-surface {
-  @apply bg-card/70 border border-slate-800/80 rounded-2xl backdrop-blur;
+  @apply rounded-2xl;
+  background: rgba(18, 18, 26, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.card-surface:hover {
+  border-color: rgba(56, 189, 248, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -84,23 +118,36 @@ body::before {
   transform-style: preserve-3d;
 }
 
-/* Premium Glassmorphism Card */
+/* ========================================
+   CLEAN GLASS CARDS - READABLE
+   ======================================== */
+
 .glass-card {
   @apply relative overflow-hidden rounded-2xl;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  background: rgba(18, 18, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.15);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(56, 189, 248, 0.06);
 }
 
 .glass-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
   pointer-events: none;
 }
 
@@ -147,9 +194,29 @@ body::before {
 /* Glowing Text Effect */
 .glow-text {
   text-shadow: 
-    0 0 10px rgba(34, 211, 238, 0.5),
-    0 0 20px rgba(34, 211, 238, 0.3),
-    0 0 40px rgba(34, 211, 238, 0.2);
+    0 0 20px rgba(56, 189, 248, 0.5),
+    0 0 40px rgba(56, 189, 248, 0.3),
+    0 0 80px rgba(139, 92, 246, 0.2);
+}
+
+/* Gradient Text Animated */
+.gradient-text-animated {
+  background: linear-gradient(135deg, 
+    #38bdf8 0%, 
+    #818cf8 25%, 
+    #a855f7 50%, 
+    #818cf8 75%, 
+    #38bdf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 6s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
 }
 
 /* Animated Underline */
@@ -164,8 +231,9 @@ body::before {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #22d3ee, #3b82f6);
-  transition: width 0.4s ease;
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
 .animated-underline:hover::after {
@@ -175,14 +243,20 @@ body::before {
 /* Premium Button Styles */
 .btn-premium {
   @apply relative overflow-hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.4), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .btn-premium::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transform: translateX(-100%);
   transition: transform 0.6s ease;
 }

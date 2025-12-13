@@ -44,8 +44,10 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-card ${
-        elevated ? 'border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : ''
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        elevated 
+          ? 'bg-[#15151f] border-b-2 border-cyan-400/40 shadow-[0_4px_30px_rgba(56,189,248,0.15)]' 
+          : 'bg-[#12121a] border-b-2 border-slate-600/50 shadow-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
