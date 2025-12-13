@@ -248,13 +248,6 @@ const Hero = () => {
                   Building reliable services with observability, great onboarding, and thoughtful developer experience.
                 </p>
               </div>
-              <motion.div 
-                className="rounded-full bg-cyan-500/10 p-3 text-cyan-200"
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <FiArrowUpRight />
-              </motion.div>
             </div>
             <div className="mt-4 space-y-3">
               {['Spring Boot services', 'Kafka data pipelines', 'React + Vite frontends', 'Observability by default'].map((item, index) => (
@@ -279,7 +272,7 @@ const Hero = () => {
               {highlightStats.map((stat, index) => (
                 <motion.div 
                   key={stat.label} 
-                  className="rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 neon-hover"
+                  className="rounded-lg border border-cyan-500/30 bg-slate-800/80 px-3 py-2 neon-hover"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
@@ -287,7 +280,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <motion.div 
-                    className="text-lg font-semibold text-cyan-200"
+                    className="text-lg font-bold text-cyan-300"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
@@ -295,7 +288,7 @@ const Hero = () => {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-slate-200">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
