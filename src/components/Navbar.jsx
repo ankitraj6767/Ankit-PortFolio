@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        elevated ? 'backdrop-blur bg-card/70 border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : 'bg-transparent'
+        elevated ? 'bg-card border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : 'bg-transparent'
       }`}
     >
       <div className="section-container flex h-16 items-center justify-between">
@@ -77,7 +77,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t border-slate-800/60 bg-card/90 px-6 pb-4 backdrop-blur">
+        <div className="md:hidden border-t border-slate-800/60 bg-card px-6 pb-4">
           <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
           <a
             href={resumeLink}
