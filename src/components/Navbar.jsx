@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { navLinks, resumeLink } from '../data/content'
 
 const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
-  <div className={`${isMobile ? 'flex flex-col gap-4 py-4' : 'hidden md:flex items-center gap-3 lg:gap-5'}`}>
+  <div className={`${isMobile ? 'flex flex-col gap-5 py-4' : 'hidden md:flex items-center gap-5 lg:gap-8'}`}>
     {navLinks.map(({ label, href }) => {
       const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
       return (
@@ -12,7 +12,7 @@ const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
           key={href}
           to={href}
           onClick={onNavigate}
-          className={`text-sm font-medium transition-colors ${
+          className={`text-sm font-medium uppercase tracking-wide transition-colors ${
             isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
           }`}
         >
@@ -41,7 +41,7 @@ const Navbar = () => {
         elevated ? 'border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : ''
       }`}
     >
-      <div className="section-container flex h-16 items-center justify-between">
+      <div className="flex h-16 items-center justify-between px-6 sm:px-10">
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30">
             <span className="text-lg font-semibold text-cyan-200">AR</span>

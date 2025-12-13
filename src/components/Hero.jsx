@@ -52,14 +52,6 @@ const Hero = () => {
               Contact Me
               <FiArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
-            <a
-              href={resumeLink}
-              className="group inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 shadow-md shadow-cyan-500/5 transition hover:-translate-y-0.5 hover:border-cyan-400/50"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download Resume
-            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-slate-200">
