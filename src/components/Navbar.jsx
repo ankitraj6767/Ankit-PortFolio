@@ -37,8 +37,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        elevated ? 'bg-card border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : 'bg-transparent'
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-card ${
+        elevated ? 'border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : ''
       }`}
     >
       <div className="section-container flex h-16 items-center justify-between">
@@ -46,10 +46,7 @@ const Navbar = () => {
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30">
             <span className="text-lg font-semibold text-cyan-200">AR</span>
           </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm text-slate-400">Portfolio</span>
-            <span className="text-base font-semibold text-slate-50">Ankit Raj</span>
-          </div>
+          <span className="text-lg font-bold tracking-wide text-slate-50 font-orbitron">Ankit Raj</span>
         </Link>
 
         <NavLinks pathname={pathname} />
