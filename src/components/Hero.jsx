@@ -1,158 +1,382 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { FiArrowDownRight, FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
-import { highlightStats, resumeLink, socialLinks, techStackPreview } from '../data/content'
+import { highlightStats, socialLinks, techStackPreview } from '../data/content'
+import { fadeInUp, staggerContainer, slideInRight, textReveal, card3D, magneticHover } from '../utils/motion'
 
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8"
+      className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8 perspective-container"
     >
+      {/* Animated Background Particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-10 top-10 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute -right-10 top-24 h-64 w-64 rounded-full bg-blue-500/10 blur-[120px]" />
-        <div className="absolute bottom-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[90px]" />
+        <motion.div 
+          className="absolute -left-10 top-10 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl morph-blob"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div 
+          className="absolute -right-10 top-24 h-64 w-64 rounded-full bg-blue-500/10 blur-[120px] morph-blob"
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.6, 0.4] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        />
+        <motion.div 
+          className="absolute bottom-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[90px] morph-blob"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        />
+        {/* Floating Particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="particle"
+            style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }}
+            animate={{
+              y: [-20, -100, -20],
+              x: [0, (i % 2 === 0 ? 30 : -30), 0],
+              opacity: [0.4, 0.8, 0.4],
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.5,
+            }}
+          />
+        ))}
       </div>
 
       <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <div className="flex max-w-3xl flex-col items-center gap-5 text-center">
-          <div className="flex w-full items-center justify-center gap-4">
-            <div className="flex h-64 w-64 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 shadow-lg shadow-cyan-500/20">
+        <motion.div 
+          className="flex max-w-3xl flex-col items-center gap-5 text-center"
+          {...staggerContainer}
+        >
+          {/* Animated Profile Image */}
+          <motion.div 
+            className="flex w-full items-center justify-center gap-4"
+            {...fadeInUp}
+          >
+            <motion.div 
+              className="relative flex h-64 w-64 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 shadow-lg shadow-cyan-500/20"
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            >
+              {/* Animated Ring */}
+              <motion.div
+                className="absolute inset-0 rounded-full border-2 border-cyan-400/30"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              />
+              <motion.div
+                className="absolute -inset-2 rounded-full border border-dashed border-cyan-400/20"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              />
               <img
                 src="/profile.png"
                 alt="Ankit Raj portrait"
                 className="h-60 w-60 rounded-full object-cover object-top"
               />
-            </div>
-          </div>
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-sm shadow-cyan-500/10">
+              {/* Glow Effect */}
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                animate={{
+                  boxShadow: [
+                    '0 0 30px rgba(34, 211, 238, 0.2)',
+                    '0 0 60px rgba(34, 211, 238, 0.4)',
+                    '0 0 30px rgba(34, 211, 238, 0.2)',
+                  ],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Animated Badge */}
+          <motion.div 
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-sm shadow-cyan-500/10 shimmer"
+            {...textReveal}
+            whileHover={{ scale: 1.05, borderColor: 'rgba(34, 211, 238, 0.5)' }}
+          >
+            <motion.span
+              className="h-2 w-2 rounded-full bg-cyan-400"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             Product-minded engineer
-          </div>
-          <div className="space-y-3">
+          </motion.div>
+
+          {/* Animated Title */}
+          <motion.div className="space-y-3" {...textReveal}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-slate-50">
-              Ankit Raj — <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-400 bg-clip-text text-transparent">Software Engineer</span>
+              Ankit Raj —{' '}
+              <span className="gradient-text-animated">
+                Software Engineer
+              </span>
             </h1>
-            <p className="text-lg text-slate-300">
+            <motion.p 
+              className="text-lg text-slate-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               I design and ship resilient products with Spring Boot, React, and cloud tooling. From architecture to UI polish, I care about reliability, performance, and user trust.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              to="/projects"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
-            >
-              View Projects
-              <FiArrowDownRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-card/60 px-5 py-3 text-sm font-semibold text-cyan-100 shadow-md shadow-cyan-500/10 transition hover:-translate-y-0.5 hover:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
-            >
-              Contact Me
-              <FiArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
-          </div>
+          {/* Animated Buttons */}
+          <motion.div 
+            className="flex flex-wrap items-center gap-3"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.div {...magneticHover} whileHover="hover" whileTap="tap">
+              <Link
+                to="/projects"
+                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-glow transition btn-premium focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
+              >
+                View Projects
+                <FiArrowDownRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </motion.div>
+            <motion.div {...magneticHover} whileHover="hover" whileTap="tap">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-card/60 px-5 py-3 text-sm font-semibold text-cyan-100 shadow-md shadow-cyan-500/10 transition neon-hover focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
+              >
+                Contact Me
+                <FiArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
+            </motion.div>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center gap-3 text-slate-200">
-            <a className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm transition hover:border-cyan-400/40 hover:text-cyan-100" href={socialLinks.github} target="_blank" rel="noreferrer">
-              <FiGithub /> GitHub
-            </a>
-            <a className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm transition hover:border-cyan-400/40 hover:text-cyan-100" href={socialLinks.linkedin} target="_blank" rel="noreferrer">
-              <FiLinkedin /> LinkedIn
-            </a>
-            <a className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm transition hover:border-cyan-400/40 hover:text-cyan-100" href={socialLinks.email}>
-              <FiMail /> Email
-            </a>
-          </div>
+          {/* Animated Social Links */}
+          <motion.div 
+            className="flex flex-wrap items-center gap-3 text-slate-200"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { icon: FiGithub, label: 'GitHub', href: socialLinks.github },
+              { icon: FiLinkedin, label: 'LinkedIn', href: socialLinks.linkedin },
+              { icon: FiMail, label: 'Email', href: socialLinks.email },
+            ].map((social, index) => (
+              <motion.a
+                key={social.label}
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm transition neon-hover"
+                href={social.href}
+                target={social.label !== 'Email' ? '_blank' : undefined}
+                rel="noreferrer"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
+              >
+                <social.icon /> {social.label}
+              </motion.a>
+            ))}
+          </motion.div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          {/* Animated Feature Cards */}
+          <motion.div 
+            className="grid gap-3 sm:grid-cols-3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             {[
               { title: 'Backend Delivery', detail: 'Spring Boot, Kafka, reliable APIs for analytics' },
               { title: 'Product Craft', detail: 'Clean interfaces with React, Tailwind, and data-rich UIs' },
               { title: 'Collaboration', detail: 'Mentorship, cross-team work, measured rollouts' },
-            ].map((item) => (
-              <div key={item.title} className="card-surface p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:shadow-glow">
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="glass-card p-4 transition duration-300 tilt-card"
+                initial={{ opacity: 0, y: 30, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03, 
+                  boxShadow: '0 20px 40px rgba(34, 211, 238, 0.15)',
+                  borderColor: 'rgba(34, 211, 238, 0.3)'
+                }}
+              >
                 <p className="text-sm font-semibold text-slate-100">{item.title}</p>
                 <p className="mt-2 text-sm text-slate-400">{item.detail}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative grid gap-4 self-stretch">
-          <div className="card-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:shadow-glow">
+        {/* Right Column - Animated Cards */}
+        <motion.div 
+          className="relative grid gap-4 self-stretch"
+          {...slideInRight}
+        >
+          {/* Current Focus Card */}
+          <motion.div 
+            className="glass-card p-6 transition duration-300 tilt-card"
+            {...card3D}
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: '0 25px 50px rgba(34, 211, 238, 0.15)'
+            }}
+          >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-cyan-200">Current focus</p>
+                <motion.p 
+                  className="text-xs uppercase tracking-[0.2em] text-cyan-200"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  Current focus
+                </motion.p>
                 <p className="mt-1 text-xl font-semibold text-slate-50">Analytics platforms & DX</p>
                 <p className="mt-2 text-sm text-slate-400">
                   Building reliable services with observability, great onboarding, and thoughtful developer experience.
                 </p>
               </div>
-              <div className="rounded-full bg-cyan-500/10 p-3 text-cyan-200">
+              <motion.div 
+                className="rounded-full bg-cyan-500/10 p-3 text-cyan-200"
+                animate={{ rotate: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              >
                 <FiArrowUpRight />
-              </div>
+              </motion.div>
             </div>
             <div className="mt-4 space-y-3">
-              {['Spring Boot services', 'Kafka data pipelines', 'React + Vite frontends', 'Observability by default'].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
+              {['Spring Boot services', 'Kafka data pipelines', 'React + Vite frontends', 'Observability by default'].map((item, index) => (
+                <motion.div 
+                  key={item} 
+                  className="flex items-center gap-2 text-sm text-slate-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.span 
+                    className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                  />
                   {item}
-                </div>
+                </motion.div>
               ))}
             </div>
             <div className="mt-6 grid grid-cols-3 gap-3 text-center text-slate-100">
-              {highlightStats.map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2">
-                  <div className="text-lg font-semibold text-cyan-200">{stat.value}</div>
+              {highlightStats.map((stat, index) => (
+                <motion.div 
+                  key={stat.label} 
+                  className="rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 neon-hover"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <motion.div 
+                    className="text-lg font-semibold text-cyan-200"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.value}
+                  </motion.div>
                   <div className="text-[11px] uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="card-surface p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/25 hover:shadow-glow">
+          {/* Signature Strengths Card */}
+          <motion.div 
+            className="glass-card p-5 transition duration-300 tilt-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
+            }}
+          >
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Signature strengths</p>
                 <h3 className="mt-1 text-lg font-semibold text-slate-50">What I bring</h3>
               </div>
-              <div className="rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs font-semibold text-cyan-100">
+              <motion.div 
+                className="rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs font-semibold text-cyan-100"
+                whileHover={{ scale: 1.1, borderColor: 'rgba(34, 211, 238, 0.5)' }}
+              >
                 Ship & Scale
-              </div>
+              </motion.div>
             </div>
             <div className="mt-4 space-y-3 text-sm text-slate-300">
-              <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
-                <span>System design with pragmatic trade-offs and strong testing/observability.</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
-                <span>Developer experience mindset—docs, tooling, and guardrails that speed teams up.</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
-                <span>UI polish with clear information hierarchy and accessibility considerations.</span>
-              </div>
+              {[
+                'System design with pragmatic trade-offs and strong testing/observability.',
+                'Developer experience mindset—docs, tooling, and guardrails that speed teams up.',
+                'UI polish with clear information hierarchy and accessibility considerations.',
+              ].map((text, index) => (
+                <motion.div 
+                  key={index} 
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.15 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.span 
+                    className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                  />
+                  <span>{text}</span>
+                </motion.div>
+              ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="card-surface mx-auto flex max-w-5xl flex-col gap-3 p-4 sm:p-5 shadow shadow-cyan-500/5">
+      {/* Tech Stack Section */}
+      <motion.div 
+        className="glass-card mx-auto flex max-w-5xl flex-col gap-3 p-4 sm:p-5 shadow shadow-cyan-500/5"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="text-xs uppercase tracking-[0.3em] text-slate-500">Tech I work with</div>
         <div className="flex flex-wrap items-center justify-center gap-2">
-          {techStackPreview.map((tech) => (
-            <span
+          {techStackPreview.map((tech, index) => (
+            <motion.span
               key={tech}
-              className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-100"
+              className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 + index * 0.05, duration: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1, y: -3 }}
             >
               {tech}
-            </span>
+            </motion.span>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

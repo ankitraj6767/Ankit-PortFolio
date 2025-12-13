@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
 import { Link, useLocation } from 'react-router-dom'
 import { navLinks, resumeLink } from '../data/content'
 
 const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
   <div className={`${isMobile ? 'flex flex-col gap-5 py-4' : 'hidden md:flex items-center gap-5 lg:gap-8'}`}>
-    {navLinks.map(({ label, href }) => {
+    {navLinks.map(({ label, href }, index) => {
       const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
       return (
-        <Link
+        <motion.div
           key={href}
-          to={href}
-          onClick={onNavigate}
-          className={`text-sm font-medium uppercase tracking-wide transition-colors ${
-            isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
-          }`}
+          initial={isMobile ? { opacity: 0, x: -20 } : false}
+          animate={isMobile ? { opacity: 1, x: 0 } : false}
+          transition={{ delay: index * 0.1 }}
         >
-          {label}
-        </Link>
+          <Link
+            to={href}
+            onClick={onNavigate}
+            className={`text-sm font-medium uppercase tracking-wide transition-colors animated-underline ${
+              isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
+            }`}
+          >
+            {label}
+          </Link>
+        </motion.div>
       )
     })}
   </div>
@@ -36,58 +43,109 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav
+    <motion.nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-card ${
         elevated ? 'border-b border-slate-800/70 shadow-lg shadow-cyan-500/5' : ''
       }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="flex h-16 items-center justify-between px-6 sm:px-10">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30">
+        <Link to="/" className="flex items-center gap-2 group">
+          <motion.div 
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span className="text-lg font-semibold text-cyan-200">AR</span>
-          </div>
-          <span className="text-lg font-bold tracking-wide text-slate-50 font-orbitron">Ankit Raj</span>
+          </motion.div>
+          <motion.span 
+            className="text-lg font-bold tracking-wide text-slate-50 font-orbitron group-hover:text-cyan-100 transition-colors"
+            whileHover={{ x: 3 }}
+          >
+            Ankit Raj
+          </motion.span>
         </Link>
 
         <NavLinks pathname={pathname} />
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
+          <motion.a
             href={resumeLink}
-            className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition hover:-translate-y-0.5 hover:border-cyan-300/60"
+            className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition neon-hover"
             target="_blank"
             rel="noreferrer"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
+            <FiDownload />
             Download Resume
-          </a>
+          </motion.a>
         </div>
 
         <div className="md:hidden">
-          <button
+          <motion.button
             aria-label="Toggle navigation"
             className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
             onClick={() => setIsOpen((open) => !open)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FiX size={20} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FiMenu size={20} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden border-t border-slate-800/60 bg-card px-6 pb-4">
-          <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
-          <a
-            href={resumeLink}
-            onClick={() => setIsOpen(false)}
-            className="mt-2 inline-flex w-full items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition hover:-translate-y-0.5 hover:border-cyan-300/60"
-            target="_blank"
-            rel="noreferrer"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            className="md:hidden border-t border-slate-800/60 bg-card px-6 pb-4 overflow-hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            Download Resume
-          </a>
-        </div>
-      )}
-    </nav>
+            <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
+            <motion.a
+              href={resumeLink}
+              onClick={() => setIsOpen(false)}
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition neon-hover"
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <FiDownload />
+              Download Resume
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   )
 }
 

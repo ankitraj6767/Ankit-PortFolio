@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
+import { motion } from 'framer-motion'
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiSend } from 'react-icons/fi'
 import { socialLinks } from '../data/content'
 import SectionHeader from './SectionHeader'
 
@@ -46,13 +47,29 @@ const Contact = () => {
         align="center"
       />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <form
-          className="card-surface p-6 sm:p-7 shadow-lg shadow-cyan-500/5"
+      <motion.div 
+        className="grid gap-6 lg:grid-cols-2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <motion.form
+          className="glass-card p-6 sm:p-7 shadow-lg shadow-cyan-500/5"
           onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="flex flex-col gap-2 text-sm text-slate-200">
+            <motion.label 
+              className="flex flex-col gap-2 text-sm text-slate-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               Name
               <input
                 type="text"
@@ -63,8 +80,14 @@ const Contact = () => {
                 className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                 placeholder="Your name"
               />
-            </label>
-            <label className="flex flex-col gap-2 text-sm text-slate-200">
+            </motion.label>
+            <motion.label 
+              className="flex flex-col gap-2 text-sm text-slate-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+            >
               Email
               <input
                 type="email"
@@ -72,12 +95,18 @@ const Contact = () => {
                 value={formState.email}
                 onChange={handleChange}
                 required
-                className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
+                className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 transition-all duration-300"
                 placeholder="you@example.com"
               />
-            </label>
+            </motion.label>
           </div>
-          <label className="mt-4 flex flex-col gap-2 text-sm text-slate-200">
+          <motion.label 
+            className="mt-4 flex flex-col gap-2 text-sm text-slate-200"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             Message
             <textarea
               name="message"
@@ -85,73 +114,107 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows={5}
-              className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
+              className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/60 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 transition-all duration-300 resize-none"
               placeholder="What would you like to work on together?"
             />
-          </label>
-          <div className="mt-5 flex items-center gap-3">
-            <button
+          </motion.label>
+          <motion.div 
+            className="mt-5 flex items-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-glow transition btn-premium focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:ring-offset-2 focus:ring-offset-ink"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <FiSend className="text-lg" />
               Send Message
-            </button>
-            {status && <span className="text-sm text-cyan-100">{status}</span>}
-          </div>
-        </form>
+            </motion.button>
+            {status && (
+              <motion.span 
+                className="text-sm text-cyan-100"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                {status}
+              </motion.span>
+            )}
+          </motion.div>
+        </motion.form>
 
-        <div className="space-y-4">
-          <div className="card-surface p-6 shadow-lg shadow-cyan-500/5">
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="glass-card p-6 shadow-lg shadow-cyan-500/5"
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
+            }}
+          >
             <h3 className="text-lg font-semibold text-slate-50">Prefer direct contact?</h3>
             <p className="mt-2 text-sm text-slate-400">
               Reach out via email or phone, or find me on the links below. I reply quickly to thoughtful messages.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <a
-                href={socialLinks.email}
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-100"
-              >
-                <FiMail />
-                Email
-              </a>
-              <a
-                href={`tel:${socialLinks.phone?.replace(/\\D/g, '') || ''}`}
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-100"
-              >
-                <FiPhone />
-                {socialLinks.phone}
-              </a>
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-100"
-              >
-                <FiGithub />
-                GitHub
-              </a>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-100"
-              >
-                <FiLinkedin />
-                LinkedIn
-              </a>
+              {[
+                { icon: FiMail, label: 'Email', href: socialLinks.email },
+                { icon: FiPhone, label: socialLinks.phone, href: `tel:${socialLinks.phone?.replace(/\D/g, '') || ''}` },
+                { icon: FiGithub, label: 'GitHub', href: socialLinks.github, external: true },
+                { icon: FiLinkedin, label: 'LinkedIn', href: socialLinks.linkedin, external: true },
+              ].map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noreferrer' : undefined}
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 transition neon-hover"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <link.icon />
+                  {link.label}
+                </motion.a>
+              ))}
             </div>
-          </div>
-          <div className="card-surface p-6 text-sm text-slate-300">
+          </motion.div>
+          <motion.div 
+            className="glass-card p-6 text-sm text-slate-300"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: '0 20px 40px rgba(34, 211, 238, 0.1)'
+            }}
+          >
             <div className="flex items-center gap-2 text-cyan-100">
-              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
+              <motion.span 
+                className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
+                animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
               Typically responds within a business day
             </div>
             <p className="mt-3 text-slate-400">
               I appreciate concise context: what you need, timelines, and any links or docs that help me understand your goals.
             </p>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
     </section>
   )
