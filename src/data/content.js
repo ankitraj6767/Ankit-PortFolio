@@ -77,22 +77,6 @@ export const skillLevels = [
 
 export const projects = [
   {
-    title: 'LifeOps - Personal Life Management Platform',
-    description:
-      'Comprehensive personal productivity platform featuring task management, habit tracking with streaks, goal milestones, daily journaling with autosave, mood analytics, and expense tracking with category-wise breakdowns.',
-    tech: [
-      'Next.js 14',
-      'TypeScript',
-      'Tailwind CSS',
-      'React Query',
-      'Zustand',
-      'NestJS',
-      'MongoDB',
-      'JWT',
-    ],
-    website: 'https://life-ops-cyan.vercel.app/',
-  },
-  {
     title: 'ShopHub E-commerce',
     description:
       'Full-stack commerce platform with dynamic deals, flash sales, premium subscriptions, gift cards, product comparison, wishlist, real-time notifications, and an admin analytics dashboard with revenue tracking.',
@@ -113,6 +97,42 @@ export const projects = [
       'Nodemailer',
     ],
     website: 'https://shophub-five.vercel.app/',
+  },
+  {
+    title: 'PG International School Website',
+    description:
+      'World-class school website with glassmorphism UI, bilingual support (Hindi/English), comprehensive Admin CMS for non-technical staff, online admission system with multi-step forms, and 100% dynamic content management. Features 25+ RESTful API endpoints and Cloudinary integration for optimized media delivery.',
+    tech: [
+      'Next.js 14',
+      'React 18',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Tailwind CSS',
+      'Framer Motion',
+      'JWT',
+      'Cloudinary',
+      'REST API',
+    ],
+    website: 'https://pg-international-school-5wp5.vercel.app/',
+  },
+  {
+    title: 'LifeOps - Personal Life Management Platform',
+    description:
+      'Comprehensive personal productivity platform featuring task management, habit tracking with streaks, goal milestones, daily journaling with autosave, mood analytics, and expense tracking with category-wise breakdowns.',
+    tech: [
+      'Next.js 14',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Query',
+      'Zustand',
+      'NestJS',
+      'MongoDB',
+      'JWT',
+    ],
+    website: 'https://life-ops-cyan.vercel.app/',
   },
   {
     title: 'CosmoScope - NASA Space Dashboard',
