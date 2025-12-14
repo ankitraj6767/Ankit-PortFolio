@@ -99,7 +99,7 @@ export const projects = [
     website: 'https://shophub-five.vercel.app/',
   },
   {
-    title: 'PG International School Website',
+    title: 'PG International School',
     description:
       'World-class school website with glassmorphism UI, bilingual support (Hindi/English), comprehensive Admin CMS for non-technical staff, online admission system with multi-step forms, and 100% dynamic content management. Features 25+ RESTful API endpoints and Cloudinary integration for optimized media delivery.',
     tech: [

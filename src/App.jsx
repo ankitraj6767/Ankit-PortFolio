@@ -33,9 +33,44 @@ const NotFound = () => (
 )
 
 const App = () => {
+  // Generate random stars
+  const stars = [...Array(50)].map((_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 3}s`,
+    duration: `${2 + Math.random() * 2}s`,
+    size: `${1 + Math.random() * 2}px`,
+  }));
+
   return (
     <BrowserRouter>
       <div className="relative overflow-x-hidden min-h-screen flex flex-col">
+        {/* Animated Background Elements */}
+        <div className="animated-top-border" />
+        <div className="orb-2" />
+        <div className="orb-3" />
+        <div className="spotlight" />
+        <div className="noise-overlay" />
+        
+        {/* Twinkling Stars */}
+        <div className="stars-container">
+          {stars.map((star) => (
+            <div
+              key={star.id}
+              className="star"
+              style={{
+                left: star.left,
+                top: star.top,
+                width: star.size,
+                height: star.size,
+                animationDelay: star.delay,
+                animationDuration: star.duration,
+              }}
+            />
+          ))}
+        </div>
+        
         <ScrollToTop />
         <Navbar />
         <div className="flex-1">
