@@ -149,8 +149,14 @@ export const experiences = [
     company: 'Blue Yonder India Private Limited',
     duration: 'July 2024 — Present',
     achievements: [
-      'Core backend contributor for MDAP, designing and developing major Spring Boot CRUD APIs and Kafka pipelines powering critical data flows.',
-      'Collaborate with cross-functional teams to ship reliable, high-performance backend services and support end-to-end feature delivery with React + TypeScript.',
+      'Core backend contributor for MDAP (Master Data Aggregation Platform), designing and developing major Spring Boot REST APIs and Kafka pipelines powering critical supply chain data flows.',
+      'Built and optimized high-throughput Kafka consumers processing 100K+ messages/day for real-time inventory and demand synchronization across global retail clients.',
+      'Developed microservices using Spring Boot with PostgreSQL, implementing complex business logic for master data validation, transformation, and aggregation.',
+      "Collaborated with cross-functional teams (Product, QA, DevOps) to ship reliable, high-performance backend services supporting Blue Yonder's Luminate Platform.",
+      'Contributed to frontend development using React + TypeScript, building intuitive dashboards for data visualization and configuration management.',
+      'Participated in code reviews, design discussions, and Agile ceremonies, ensuring high code quality and on-time feature delivery.',
+      'Wrote comprehensive unit and integration tests using JUnit and Mockito, maintaining 80%+ code coverage across owned services.',
+      'Debugged and resolved production issues in a fast-paced environment, reducing incident response time through effective root cause analysis.',
     ],
   },
   {
@@ -158,8 +164,13 @@ export const experiences = [
     company: 'Blue Yonder India Private Limited',
     duration: 'January 2024 — June 2024',
     achievements: [
-      'Implemented Spring Boot services and integrated Kafka for real-time data processing on the MDAP platform.',
-      'Improved existing components, debugged issues, and helped deliver reliable features during Agile sprints.',
+      'Implemented Spring Boot RESTful services for the MDAP platform, enabling efficient CRUD operations for master data entities.',
+      'Integrated Apache Kafka for real-time event streaming, building producers and consumers for asynchronous data processing pipelines.',
+      'Collaborated with senior engineers to design database schemas and optimize SQL queries for better performance on large datasets.',
+      'Contributed to React-based UI components, implementing forms, tables, and data visualization features with TypeScript.',
+      'Improved existing backend components by refactoring legacy code, fixing bugs, and enhancing error handling mechanisms.',
+      'Participated in Agile sprints, daily standups, and sprint retrospectives, gaining hands-on experience in professional software development workflows.',
+      'Documented APIs using Swagger/OpenAPI, making it easier for frontend teams and external consumers to integrate with backend services.',
     ],
   },
 ]
@@ -184,29 +195,85 @@ export const education = [
     summary:
       'Built a strong foundation in core CS—Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, and OOP—while growing a passion for competitive programming.',
     highlights: [
-      'Practiced problem-solving on Codeforces, CodeChef, LeetCode, and GFG; reached Expert on Codeforces.',
+      'Practiced problem-solving on Codeforces, CodeChef, LeetCode, and GFG; reached Expert on Codeforces (1852 rating).',
       'Solved 1700+ DSA & CP problems, sharpening algorithmic thinking and coding accuracy.',
+      'Technical Head of Coding Club—organized workshops, mentored juniors, and conducted coding contests.',
+      'Completed projects in full-stack development using React, Node.js, Spring Boot, and MongoDB.',
+      'Participated in hackathons and coding competitions, consistently ranking in top percentiles.',
+      'Studied advanced topics: Machine Learning, Compiler Design, and Distributed Systems.',
+    ],
+    courses: [
+      'Data Structures & Algorithms',
+      'Operating Systems',
+      'Database Management Systems',
+      'Computer Networks',
+      'Object-Oriented Programming',
+      'Theory of Computation',
+      'Compiler Design',
+      'Machine Learning',
+      'Software Engineering',
+      'Distributed Systems',
+    ],
+    activities: [
+      'Technical Head - Coding Club',
+      'Competitive Programming Team',
+      'Hackathon Participant',
+      'Peer Mentor for DSA',
     ],
   },
   {
     school: 'R.P.S. College, Harnaut Nalanda',
     location: 'Bihar, India',
-    credential: 'Class 12',
+    credential: 'Class 12 (Intermediate)',
     duration: 'Apr 2017 — Mar 2019',
     detail: 'Percentage: 81.6%',
     summary:
       'Focused on core science subjects that strengthened logical and analytical skills and sparked interest in engineering and computation.',
-    highlights: [],
+    highlights: [
+      'Specialized in Physics, Chemistry, and Mathematics (PCM) stream.',
+      'Developed strong problem-solving skills through rigorous mathematics practice.',
+      'Participated in science exhibitions and quiz competitions.',
+      'Prepared for competitive engineering entrance exams (JEE).',
+    ],
+    courses: [
+      'Physics',
+      'Chemistry',
+      'Mathematics',
+      'English',
+      'Hindi',
+    ],
+    activities: [
+      'Science Exhibition Participant',
+      'Quiz Competition',
+    ],
   },
   {
     school: 'Sita Saran Memorial School, Bhatahar, Nalanda',
     location: 'Bihar, India',
-    credential: 'Class 10',
+    credential: 'Class 10 (Matriculation)',
     duration: 'Jul 2007 — Jun 2017',
     detail: 'CGPA: 10 / 10',
     summary:
       'Achieved a perfect CGPA, reflecting consistent discipline, strong academics, and early aptitude for analytical problem-solving.',
-    highlights: [],
+    highlights: [
+      'Secured perfect 10/10 CGPA, ranking among top students in the school.',
+      'Excelled in Mathematics and Science, developing a strong analytical foundation.',
+      'Active participant in school-level competitions and cultural activities.',
+      'Recognized for academic excellence with multiple awards and certificates.',
+    ],
+    courses: [
+      'Mathematics',
+      'Science',
+      'Social Studies',
+      'English',
+      'Hindi',
+      'Sanskrit',
+    ],
+    activities: [
+      'Academic Excellence Award',
+      'Science Olympiad',
+      'Cultural Programs',
+    ],
   },
 ]
 
@@ -250,9 +317,9 @@ export const techStackPreview = [
 ]
 
 export const highlightStats = [
-  { label: 'Years Coding', value: '3+' },
+  { label: 'Years Coding', value: '5+' },
   { label: 'Projects', value: '20+' },
-  { label: 'GitHub Contributions', value: '100+' },
+  { label: 'Contributions', value: '100+' },
 ]
 
 export const codingProfiles = {

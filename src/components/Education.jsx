@@ -103,6 +103,62 @@ const Education = () => {
                 ))}
               </ul>
             )}
+
+            {/* Courses Section */}
+            {item.courses && item.courses.length > 0 && (
+              <motion.div 
+                className="mt-5"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 + 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold mb-2">Key Courses</h4>
+                <div className="flex flex-wrap gap-2">
+                  {item.courses.map((course, courseIndex) => (
+                    <motion.span
+                      key={course}
+                      className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs text-slate-300"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.2 + 0.7 + courseIndex * 0.03 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.08, y: -2 }}
+                    >
+                      {course}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Activities Section */}
+            {item.activities && item.activities.length > 0 && (
+              <motion.div 
+                className="mt-4"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 + 0.7 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold mb-2">Activities & Achievements</h4>
+                <div className="flex flex-wrap gap-2">
+                  {item.activities.map((activity, actIndex) => (
+                    <motion.span
+                      key={activity}
+                      className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-200"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.2 + 0.8 + actIndex * 0.05 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.08, y: -2 }}
+                    >
+                      {activity}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         ))}
       </motion.div>
