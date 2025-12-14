@@ -9,6 +9,8 @@ const About = () => {
     'Breaking down complex requirements into simple, modular components.',
     'Caring about clean architecture, good naming, and thoughtful abstractions.',
     'Instrumenting services with testing and observability from the start.',
+    'Writing performant code that scales with growing user demands.',
+    'Continuously learning new technologies and best practices.',
   ]
 
   const philosophy = [
@@ -16,18 +18,40 @@ const About = () => {
     'Simplicity beats unnecessary complexity; choose tools for the problem, not the hype.',
     'Testing and reliability matter—ship with confidence, measure, and iterate.',
     'Write for future collaborators: clear naming, small focused functions, good docs.',
+    'Embrace code reviews as learning opportunities, not criticism.',
+    'Performance optimization should be data-driven, not premature.',
   ]
 
   const collaboration = [
     'Comfortable with Git, code reviews, and clear async communication.',
     'Enjoy pairing, discussing trade-offs, and mentoring/learning from teammates.',
     'Break work into small, shippable steps to maintain momentum.',
+    'Document decisions and share knowledge proactively.',
+    'Adapt communication style based on audience—technical or non-technical.',
   ]
 
   const personal = [
     'Reading and exploring tech that improves how I think and build.',
     'Practicing problem-solving on platforms like LeetCode and Codeforces.',
     'Refactoring and polishing side projects for fun and learning.',
+    'Contributing to open-source projects when possible.',
+    'Staying curious about emerging technologies and industry trends.',
+  ]
+
+  const achievements = [
+    { icon: '🏆', title: 'Expert on Codeforces', desc: 'Max Rating: 1852' },
+    { icon: '⭐', title: '4★ on CodeChef', desc: 'Max Rating: 1832' },
+    { icon: '🗡️', title: 'Knight on LeetCode', desc: 'Max Rating: 1937' },
+    { icon: '💻', title: '1700+ Problems Solved', desc: 'Across multiple platforms' },
+    { icon: '🎓', title: 'NIT Silchar Graduate', desc: 'B.Tech CSE, CGPA: 8.37' },
+    { icon: '👨‍💻', title: 'SDE at Blue Yonder', desc: 'Building enterprise solutions' },
+  ]
+
+  const techExpertise = [
+    { category: 'Backend', skills: ['Spring Boot', 'Node.js', 'Express.js', 'NestJS', 'Kafka', 'REST APIs'] },
+    { category: 'Frontend', skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux'] },
+    { category: 'Databases', skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'] },
+    { category: 'DevOps', skills: ['Docker', 'Git', 'Azure', 'AWS', 'CI/CD'] },
   ]
 
   return (
@@ -333,6 +357,132 @@ const About = () => {
               >
                 {profile.name}
               </motion.a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Achievements Section */}
+        <motion.div 
+          className="glass-card p-5 sm:p-6 tilt-card"
+          initial={{ opacity: 0, y: 40, rotateX: 8 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ delay: 0.25, duration: 0.6 }}
+          viewport={{ once: true }}
+          whileHover={{ 
+            scale: 1.02,
+            boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
+          }}
+        >
+          <h4 className="text-sm font-semibold text-slate-100">Key Achievements</h4>
+          <p className="mt-2 text-sm text-slate-400">Milestones that reflect my journey and growth.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={achievement.title}
+                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4 neon-hover"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 + index * 0.08 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.03, y: -3 }}
+              >
+                <span className="text-2xl">{achievement.icon}</span>
+                <div>
+                  <h5 className="text-sm font-semibold text-cyan-200">{achievement.title}</h5>
+                  <p className="text-xs text-slate-400">{achievement.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tech Expertise Section */}
+        <motion.div 
+          className="glass-card p-5 sm:p-6 tilt-card"
+          initial={{ opacity: 0, y: 40, rotateX: 8 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+          whileHover={{ 
+            scale: 1.02,
+            boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
+          }}
+        >
+          <h4 className="text-sm font-semibold text-slate-100">Technical Expertise</h4>
+          <p className="mt-2 text-sm text-slate-400">Technologies I work with daily and love building with.</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {techExpertise.map((category, catIndex) => (
+              <motion.div
+                key={category.category}
+                className="rounded-xl border border-slate-800 bg-slate-900/60 p-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + catIndex * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h5 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold">{category.category}</h5>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skill}
+                      className="rounded-full border border-slate-700 bg-slate-800/60 px-2.5 py-1 text-xs text-slate-300"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 + skillIndex * 0.05 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* What I'm Learning Section */}
+        <motion.div 
+          className="glass-card p-5 sm:p-6 tilt-card"
+          initial={{ opacity: 0, y: 40, rotateX: 8 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ delay: 0.35, duration: 0.6 }}
+          viewport={{ once: true }}
+          whileHover={{ 
+            scale: 1.02,
+            boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
+          }}
+        >
+          <h4 className="text-sm font-semibold text-slate-100">Currently Learning & Exploring</h4>
+          <p className="mt-2 text-sm text-slate-400">Staying curious and expanding my skill set.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'System Design', desc: 'Scalable architecture patterns, distributed systems' },
+              { title: 'Cloud Architecture', desc: 'AWS, Azure services, infrastructure as code' },
+              { title: 'Performance Optimization', desc: 'Profiling, caching strategies, database tuning' },
+              { title: 'DevOps Practices', desc: 'CI/CD pipelines, Kubernetes, observability' },
+              { title: 'AI/ML Integration', desc: 'LLM APIs, embeddings, AI-powered features' },
+              { title: 'Open Source', desc: 'Contributing to community projects' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4 neon-hover"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 + index * 0.08 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.03, y: -3 }}
+              >
+                <motion.span 
+                  className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                />
+                <div>
+                  <h5 className="text-sm font-semibold text-slate-200">{item.title}</h5>
+                  <p className="text-xs text-slate-400">{item.desc}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

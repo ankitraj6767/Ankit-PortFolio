@@ -213,16 +213,40 @@ export const education = [
 export const resumeLink = '/resume.pdf?v=2'
 
 export const techStackPreview = [
-'Java',
-'Spring Boot',
-'Kafka',
-'JavaScript',
-'TypeScript',
-'React',
-'Node.js',
-'MongoDB',
-'SQL',
-'Azure'
+  // Languages
+  'Java',
+  'C++',
+  'Python',
+  'JavaScript',
+  'TypeScript',
+  'SQL',
+  // Backend
+  'Spring Boot',
+  'Node.js',
+  'Express.js',
+  'NestJS',
+  'Kafka',
+  'Rest Api',
+  // Frontend
+  'React',
+  'Next.js',
+  'Redux',
+  'Tailwind CSS',
+  'Framer Motion',
+  // Databases
+  'MongoDB',
+  'PostgreSQL',
+  'MySQL',
+  'Redis',
+  // DevOps & Cloud
+  'Docker',
+  'Git',
+  'Azure',
+  'AWS',
+  // Tools
+  'Postman',
+  'JWT',
+  'Cloudinary',
 ]
 
 export const highlightStats = [

@@ -250,7 +250,15 @@ const Hero = () => {
               </div>
             </div>
             <div className="mt-4 space-y-3">
-              {['Spring Boot services', 'Kafka data pipelines', 'React + Vite frontends', 'Observability by default'].map((item, index) => (
+              {[
+                'Spring Boot microservices',
+                'Kafka data pipelines',
+                'React + Next.js frontends',
+                'REST API design',
+                'MongoDB & PostgreSQL',
+                'Docker containerization',
+                'Observability & monitoring',
+              ].map((item, index) => (
                 <motion.div 
                   key={item} 
                   className="flex items-center gap-2 text-sm text-slate-300"
@@ -347,7 +355,7 @@ const Hero = () => {
 
       {/* Tech Stack Section */}
       <motion.div 
-        className="glass-card mx-auto flex max-w-5xl flex-col gap-3 p-4 sm:p-5 shadow shadow-cyan-500/5"
+        className="glass-card mx-auto flex w-full max-w-6xl flex-col gap-3 p-4 sm:p-6 shadow shadow-cyan-500/5"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
