@@ -77,6 +77,22 @@ export const skillLevels = [
 
 export const projects = [
   {
+    title: 'LifeOps - Personal Life Management Platform',
+    description:
+      'Comprehensive personal productivity platform featuring task management, habit tracking with streaks, goal milestones, daily journaling with autosave, mood analytics, and expense tracking with category-wise breakdowns.',
+    tech: [
+      'Next.js 14',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Query',
+      'Zustand',
+      'NestJS',
+      'MongoDB',
+      'JWT',
+    ],
+    website: 'https://life-ops-cyan.vercel.app/',
+  },
+  {
     title: 'ShopHub E-commerce',
     description:
       'Full-stack commerce platform with dynamic deals, flash sales, premium subscriptions, gift cards, product comparison, wishlist, real-time notifications, and an admin analytics dashboard with revenue tracking.',
