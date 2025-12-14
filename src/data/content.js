@@ -46,7 +46,7 @@ export const cpHighlights = {
   description:
     'Strong analytical mindset with deep experience in algorithms, optimizations, and coding competitions.',
   bullets: [
-    'Expert at Codeforces (Max Rating: 1617)',
+    'Expert at Codeforces (Max Rating: 1852)',
     '4★ at CodeChef (Max Rating: 1832)',
     'Knight at LeetCode (Max Rating: 1937)',
     '1700+ problems solved across platforms',
