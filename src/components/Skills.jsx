@@ -82,13 +82,11 @@ const Skills = () => {
         >
           <div className="flex items-start justify-between gap-3">
             <h3 className="text-lg font-semibold text-slate-50">{cpHighlights.title}</h3>
-            <motion.span 
-              className="text-xs uppercase tracking-[0.2em] text-slate-500"
-              animate={{ color: ['#64748b', '#22d3ee', '#64748b'] }}
-              transition={{ duration: 3, repeat: Infinity }}
+            <span 
+              className="text-xs uppercase tracking-[0.2em] text-cyan-400"
             >
               CP
-            </motion.span>
+            </span>
           </div>
           <p className="mt-2 text-sm text-slate-400">{cpHighlights.description}</p>
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
@@ -98,13 +96,11 @@ const Skills = () => {
                 className="flex gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
+                transition={{ delay: 0.1 + index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <motion.span 
+                <span 
                   className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                 />
                 <span>{bullet}</span>
               </motion.li>

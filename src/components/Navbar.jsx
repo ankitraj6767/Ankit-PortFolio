@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { navLinks, resumeLink } from '../data/content'
 
 const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
-  <div className={`${isMobile ? 'flex flex-col gap-5 py-4' : 'hidden md:flex items-center gap-5 lg:gap-8'}`}>
+  <div className={`${isMobile ? 'flex flex-col gap-5 py-4' : 'hidden lg:flex items-center gap-3 xl:gap-6'}`}>
     {navLinks.map(({ label, href }, index) => {
       const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
       return (
@@ -18,7 +18,7 @@ const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
           <Link
             to={href}
             onClick={onNavigate}
-            className={`text-sm font-medium uppercase tracking-wide transition-colors animated-underline ${
+            className={`text-xs xl:text-sm font-medium uppercase tracking-wide transition-colors animated-underline whitespace-nowrap ${
               isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-200'
             }`}
           >
@@ -53,17 +53,17 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="flex h-16 items-center justify-between px-6 sm:px-10">
-        <Link to="/" className="flex items-center gap-2 group">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link to="/" className="flex items-center gap-2 group shrink-0">
           <motion.div 
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30"
+            className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/30 via-sky-400/30 to-blue-500/30 ring-1 ring-cyan-400/30"
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-lg font-semibold text-cyan-200">AR</span>
+            <span className="text-base sm:text-lg font-semibold text-cyan-200">AR</span>
           </motion.div>
           <motion.span 
-            className="text-lg font-bold tracking-wide text-slate-50 font-orbitron group-hover:text-cyan-100 transition-colors"
+            className="text-base sm:text-lg font-bold tracking-wide text-slate-50 font-orbitron group-hover:text-cyan-100 transition-colors"
             whileHover={{ x: 3 }}
           >
             Ankit Raj
@@ -72,21 +72,21 @@ const Navbar = () => {
 
         <NavLinks pathname={pathname} />
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex shrink-0">
           <motion.a
             href={resumeLink}
-            className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition neon-hover"
+            className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition neon-hover whitespace-nowrap"
             target="_blank"
             rel="noreferrer"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FiDownload />
-            Download Resume
+            <FiDownload className="shrink-0" />
+            <span className="hidden xl:inline">Download</span> Resume
           </motion.a>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <motion.button
             aria-label="Toggle navigation"
             className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
@@ -124,7 +124,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="md:hidden border-t border-slate-800/60 bg-card px-6 pb-4 overflow-hidden"
+            className="lg:hidden border-t border-slate-800/60 bg-card px-6 pb-4 overflow-hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

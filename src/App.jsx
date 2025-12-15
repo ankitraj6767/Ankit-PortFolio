@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useMemo } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -33,15 +34,16 @@ const NotFound = () => (
 )
 
 const App = () => {
-  // Generate random stars
-  const stars = [...Array(50)].map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 3}s`,
-    duration: `${2 + Math.random() * 2}s`,
-    size: `${1 + Math.random() * 2}px`,
-  }));
+  // Generate random stars - reduced count for mobile performance
+  const stars = useMemo(() => 
+    [...Array(15)].map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 5}s`,
+      duration: `${4 + Math.random() * 4}s`,
+      size: `${1 + Math.random() * 2}px`,
+    })), []);
 
   return (
     <BrowserRouter>

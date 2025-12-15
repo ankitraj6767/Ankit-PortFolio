@@ -11,46 +11,40 @@ const Hero = () => {
       className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8 perspective-container"
     >
       {/* Animated Background Particles */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
         <motion.div 
           className="absolute -left-10 top-10 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl morph-blob"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div 
           className="absolute -right-10 top-24 h-64 w-64 rounded-full bg-blue-500/10 blur-[120px] morph-blob"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.6, 0.4] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          animate={{ scale: [1.1, 1, 1.1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         />
-        <motion.div 
-          className="absolute bottom-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[90px] morph-blob"
-          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-        />
-        {/* Floating Particles */}
-        {[...Array(6)].map((_, i) => (
+        {/* Reduced Floating Particles - hidden on mobile */}
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="particle"
-            style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 25}%` }}
+            style={{ left: `${20 + i * 25}%`, top: `${25 + (i % 2) * 30}%` }}
             animate={{
-              y: [-20, -100, -20],
-              x: [0, (i % 2 === 0 ? 30 : -30), 0],
-              opacity: [0.4, 0.8, 0.4],
+              y: [-10, -50, -10],
+              opacity: [0.3, 0.5, 0.3],
             }}
             transition={{
-              duration: 8 + i * 2,
+              duration: 12 + i * 3,
               repeat: Infinity,
               ease: 'easeInOut',
-              delay: i * 0.5,
+              delay: i * 0.8,
             }}
           />
         ))}
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <motion.div 
-          className="flex max-w-3xl flex-col items-center gap-5 text-center"
+          className="flex w-full max-w-3xl flex-col items-center gap-5 text-center lg:items-center"
           {...staggerContainer}
         >
           {/* Animated Profile Image */}
@@ -60,50 +54,41 @@ const Hero = () => {
           >
             <motion.div 
               className="relative flex h-64 w-64 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 shadow-lg shadow-cyan-500/20"
-              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              {/* Animated Ring */}
-              <motion.div
+              {/* Static Ring - no animation for better performance */}
+              <div
                 className="absolute inset-0 rounded-full border-2 border-cyan-400/30"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
               />
-              <motion.div
+              <div
                 className="absolute -inset-2 rounded-full border border-dashed border-cyan-400/20"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               />
               <img
                 src="/profile.png"
                 alt="Ankit Raj portrait"
                 className="h-60 w-60 rounded-full object-cover object-top"
+                loading="eager"
+                decoding="async"
               />
-              {/* Glow Effect */}
-              <motion.div
+              {/* Static Glow Effect */}
+              <div
                 className="absolute inset-0 rounded-full"
-                animate={{
-                  boxShadow: [
-                    '0 0 30px rgba(34, 211, 238, 0.2)',
-                    '0 0 60px rgba(34, 211, 238, 0.4)',
-                    '0 0 30px rgba(34, 211, 238, 0.2)',
-                  ],
+                style={{
+                  boxShadow: '0 0 40px rgba(34, 211, 238, 0.25)',
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               />
             </motion.div>
           </motion.div>
 
           {/* Animated Badge */}
           <motion.div 
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-sm shadow-cyan-500/10 shimmer"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-sm shadow-cyan-500/10"
             {...textReveal}
             whileHover={{ scale: 1.05, borderColor: 'rgba(34, 211, 238, 0.5)' }}
           >
-            <motion.span
+            <span
               className="h-2 w-2 rounded-full bg-cyan-400"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
             />
             Product-minded engineer
           </motion.div>
@@ -129,7 +114,7 @@ const Hero = () => {
 
           {/* Animated Buttons */}
           <motion.div 
-            className="flex flex-wrap items-center gap-3"
+            className="flex flex-wrap items-center justify-center gap-3"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -157,7 +142,7 @@ const Hero = () => {
 
           {/* Animated Social Links */}
           <motion.div 
-            className="flex flex-wrap items-center gap-3 text-slate-200"
+            className="flex flex-wrap items-center justify-center gap-3 text-slate-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -187,7 +172,7 @@ const Hero = () => {
 
           {/* Animated Feature Cards */}
           <motion.div 
-            className="grid gap-3 sm:grid-cols-3"
+            className="grid w-full gap-3 sm:grid-cols-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -220,7 +205,7 @@ const Hero = () => {
 
         {/* Right Column - Animated Cards */}
         <motion.div 
-          className="relative grid gap-4 self-stretch"
+          className="relative grid w-full gap-4 self-stretch"
           {...slideInRight}
         >
           {/* Current Focus Card */}
@@ -264,13 +249,11 @@ const Hero = () => {
                   className="flex items-center gap-2 text-sm text-slate-300"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  transition={{ delay: 0.2 + index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <motion.span 
+                  <span 
                     className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                   />
                   {item}
                 </motion.div>
@@ -337,13 +320,11 @@ const Hero = () => {
                   className="flex items-start gap-2"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 + index * 0.15 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <motion.span 
+                  <span 
                     className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                   />
                   <span>{text}</span>
                 </motion.div>

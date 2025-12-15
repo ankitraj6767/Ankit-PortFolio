@@ -26,16 +26,6 @@ const Experience = () => {
               boxShadow: '0 25px 50px rgba(34, 211, 238, 0.12)'
             }}
           >
-            {/* Timeline Connector Line */}
-            <motion.div 
-              className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-blue-500"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
-              viewport={{ once: true }}
-              style={{ originY: 0 }}
-            />
-            
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
                 <motion.h3 
@@ -75,13 +65,11 @@ const Experience = () => {
                   className="flex items-start gap-2"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.15 + 0.5 + achIndex * 0.1 }}
+                  transition={{ delay: index * 0.15 + 0.3 + achIndex * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <motion.span 
+                  <span 
                     className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0"
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: achIndex * 0.2 }}
                   />
                   <span>{item}</span>
                 </motion.li>
