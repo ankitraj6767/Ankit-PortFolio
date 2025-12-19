@@ -8,8 +8,21 @@ const Hero = () => {
   return (
     <section
       id="hero"
+      itemScope
+      itemType="https://schema.org/Person"
       className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8 perspective-container"
+      aria-label="Ankit Raj - Software Development Engineer Portfolio"
     >
+      {/* Hidden SEO Content for Search Engines */}
+      <div className="sr-only" aria-hidden="true">
+        <h2>Ankit Raj - Software Development Engineer</h2>
+        <p>Ankit Raj is a Software Development Engineer at Blue Yonder India Private Limited. He specializes in Java, Spring Boot, React, Node.js, Kafka, MongoDB, and PostgreSQL. Ankit graduated from NIT Silchar with a B.Tech in Computer Science and Engineering (CGPA: 8.37/10). He is a competitive programmer with 1700+ DSA problems solved, Codeforces Expert rating of 1852, and LeetCode Knight rating of 1937. Contact Ankit Raj at araj803125@gmail.com or +91-6200667346. Visit his portfolio at ankit-raj.in for projects and experience details.</p>
+        <meta itemProp="name" content="Ankit Raj" />
+        <meta itemProp="jobTitle" content="Software Development Engineer" />
+        <meta itemProp="email" content="araj803125@gmail.com" />
+        <meta itemProp="telephone" content="+91-6200667346" />
+        <meta itemProp="url" content="https://ankit-raj.in/" />
+      </div>
       {/* Animated Background Particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
         <motion.div 
@@ -66,10 +79,14 @@ const Hero = () => {
               />
               <img
                 src="/profile.png"
-                alt="Ankit Raj portrait"
+                alt="Ankit Raj - Software Development Engineer at Blue Yonder, NIT Silchar CSE Graduate"
+                title="Ankit Raj - Full Stack Developer"
                 className="h-60 w-60 rounded-full object-cover object-top"
                 loading="eager"
                 decoding="async"
+                itemProp="image"
+                width="240"
+                height="240"
               />
               {/* Static Glow Effect */}
               <div
@@ -95,9 +112,9 @@ const Hero = () => {
 
           {/* Animated Title */}
           <motion.div className="space-y-3" {...textReveal}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-slate-50">
-              Ankit Raj —{' '}
-              <span className="gradient-text-animated">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-slate-50" itemProp="name">
+              <span itemProp="givenName">Ankit</span> <span itemProp="familyName">Raj</span> —{' '}
+              <span className="gradient-text-animated" itemProp="jobTitle">
                 Software Engineer
               </span>
             </h1>

@@ -1,0 +1,21 @@
+/* TEAM */
+Developer: Ankit Raj
+Title: Software Development Engineer
+Site: https://ankit-raj.in/
+Email: araj803125@gmail.com
+Location: Bihar, India
+Twitter: @ankitra14349112
+GitHub: ankitraj6767
+LinkedIn: ankit-raj-427510216
+
+/* THANKS */
+Built with React, Vite, Tailwind CSS, and Framer Motion
+Deployed on Vercel/Netlify
+
+/* SITE */
+Last update: 2025/12/19
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3, ES6+
+IDE: VS Code
+Software: Vite, React, Tailwind CSS

@@ -12,6 +12,7 @@ import SectionHeader from './components/SectionHeader'
 import Footer from './components/Footer'
 import FloatingWhatsapp from './components/FloatingWhatsapp'
 import ScrollToTop from './components/ScrollToTop'
+import SEOHelper from './components/SEOHelper'
 
 const Page = ({ children }) => (
   <main className="flex flex-col gap-16 sm:gap-20 pt-20 sm:pt-24 pb-32 lg:pb-36">
@@ -48,6 +49,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative overflow-x-hidden min-h-screen flex flex-col">
+        {/* SEO Helper for dynamic meta tags */}
+        <SEOHelper />
+        
         {/* Animated Background Elements */}
         <div className="animated-top-border" />
         <div className="orb-2" />

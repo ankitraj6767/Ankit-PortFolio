@@ -1,76 +1,450 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
-    <!-- Preconnect to external domains for faster font loading -->
+    <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
     <!-- Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
     
-    <!-- Primary Meta Tags -->
-    <title>Ankit Raj | Software Development Engineer | Full Stack Developer</title>
-    <meta name="title" content="Ankit Raj | Software Development Engineer | Full Stack Developer" />
-    <meta name="description" content="Ankit Raj - Software Development Engineer at Blue Yonder. Expert in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate. 1700+ DSA problems solved. Codeforces Expert (1617), LeetCode Knight (1937)." />
-    <meta name="keywords" content="Ankit Raj, Software Developer, SDE, Full Stack Developer, Java Developer, Spring Boot Developer, React Developer, Blue Yonder, NIT Silchar, Codeforces Expert, LeetCode Knight, Backend Developer, Frontend Developer, Web Developer, Portfolio" />
+    <!-- ==================== PRIMARY SEO META TAGS ==================== -->
+    <title>Ankit Raj - Software Development Engineer | Full Stack Developer | Java & React Expert</title>
+    <meta name="title" content="Ankit Raj - Software Development Engineer | Full Stack Developer | Java & React Expert" />
+    <meta name="description" content="Ankit Raj is a Software Development Engineer at Blue Yonder, specializing in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate with 1700+ DSA problems solved. Codeforces Expert (1852), LeetCode Knight (1937). Hire Ankit Raj for full-stack development, backend engineering, and software solutions." />
+    <meta name="keywords" content="Ankit Raj, Ankit Raj developer, Ankit Raj software engineer, Ankit Raj Blue Yonder, Ankit Raj NIT Silchar, Ankit Raj portfolio, Ankit Raj Java developer, Ankit Raj Spring Boot, Ankit Raj React developer, Ankit Raj full stack developer, Ankit Raj SDE, Ankit Raj Bihar, Ankit Raj India, Software Development Engineer, Full Stack Developer, Java Developer, Spring Boot Developer, React Developer, Backend Developer, Frontend Developer, Web Developer, Blue Yonder developer, NIT Silchar alumnus, Codeforces Expert, LeetCode Knight, competitive programmer, DSA expert, software engineer portfolio, hire software developer India" />
     <meta name="author" content="Ankit Raj" />
-    <meta name="robots" content="index, follow" />
+    <meta name="creator" content="Ankit Raj" />
+    <meta name="publisher" content="Ankit Raj" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
     <link rel="canonical" href="https://ankit-raj.in/" />
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ankit-raj.in/" />
-    <meta property="og:title" content="Ankit Raj | Software Development Engineer | Full Stack Developer" />
-    <meta property="og:description" content="Ankit Raj - Software Development Engineer at Blue Yonder. Expert in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate. 1700+ DSA problems solved." />
-    <meta property="og:image" content="https://ankit-raj.in/og-image.png" />
-    <meta property="og:site_name" content="Ankit Raj Portfolio" />
+    <!-- ==================== FAVICON & APP ICONS ==================== -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/profile.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/profile.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/profile.png" />
+    <link rel="manifest" href="/manifest.json" />
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ankit-raj.in/" />
-    <meta property="twitter:title" content="Ankit Raj | Software Development Engineer | Full Stack Developer" />
-    <meta property="twitter:description" content="Ankit Raj - Software Development Engineer at Blue Yonder. Expert in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate. 1700+ DSA problems solved." />
-    <meta property="twitter:image" content="https://ankit-raj.in/og-image.png" />
-    
-    <!-- Additional SEO Meta Tags -->
+    <!-- ==================== ADDITIONAL SEO META TAGS ==================== -->
     <meta name="theme-color" content="#0f172a" />
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <meta name="application-name" content="Ankit Raj Portfolio" />
+    <meta name="apple-mobile-web-app-title" content="Ankit Raj" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="subject" content="Ankit Raj - Software Development Engineer Portfolio" />
+    <meta name="rating" content="General" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="classification" content="Software Developer Portfolio" />
+    <meta name="category" content="Technology, Software Development, Portfolio" />
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- ==================== GEO & LANGUAGE TAGS ==================== -->
+    <meta name="geo.region" content="IN-BR" />
+    <meta name="geo.placename" content="Bihar, India" />
+    <meta name="geo.position" content="25.5941;85.1376" />
+    <meta name="ICBM" content="25.5941, 85.1376" />
+    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="en-IN" />
+    
+    <!-- ==================== VERIFICATION TAGS ==================== -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+    
+    <!-- ==================== OPEN GRAPH / FACEBOOK ==================== -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://ankit-raj.in/" />
+    <meta property="og:title" content="Ankit Raj - Software Development Engineer | Full Stack Developer" />
+    <meta property="og:description" content="Ankit Raj is a Software Development Engineer at Blue Yonder. Expert in Java, Spring Boot, React & Kafka. NIT Silchar CSE grad. 1700+ DSA problems solved. Codeforces Expert, LeetCode Knight." />
+    <meta property="og:image" content="https://ankit-raj.in/profile.png" />
+    <meta property="og:image:secure_url" content="https://ankit-raj.in/profile.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ankit Raj - Software Development Engineer" />
+    <meta property="og:site_name" content="Ankit Raj - Portfolio" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="profile:first_name" content="Ankit" />
+    <meta property="profile:last_name" content="Raj" />
+    <meta property="profile:username" content="ankitraj6767" />
+    
+    <!-- ==================== TWITTER CARD ==================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ankitra14349112" />
+    <meta name="twitter:creator" content="@ankitra14349112" />
+    <meta name="twitter:url" content="https://ankit-raj.in/" />
+    <meta name="twitter:title" content="Ankit Raj - Software Development Engineer | Full Stack Developer" />
+    <meta name="twitter:description" content="Software Development Engineer at Blue Yonder. Expert in Java, Spring Boot, React & Kafka. NIT Silchar CSE grad. 1700+ DSA problems. Codeforces Expert, LeetCode Knight." />
+    <meta name="twitter:image" content="https://ankit-raj.in/profile.png" />
+    <meta name="twitter:image:alt" content="Ankit Raj - Software Development Engineer" />
+    
+    <!-- ==================== LINKEDIN ==================== -->
+    <meta property="article:author" content="https://www.linkedin.com/in/ankit-raj-427510216/" />
+    
+    <!-- ==================== STRUCTURED DATA - PERSON ==================== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://ankit-raj.in/#person",
       "name": "Ankit Raj",
+      "givenName": "Ankit",
+      "familyName": "Raj",
+      "alternateName": ["Ankit", "ankitraj6767", "smartwinner"],
       "url": "https://ankit-raj.in/",
-      "image": "https://ankit-raj.in/og-image.png",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://ankit-raj.in/profile.png",
+        "width": 400,
+        "height": 400,
+        "caption": "Ankit Raj - Software Development Engineer"
+      },
+      "description": "Software Development Engineer at Blue Yonder with expertise in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate. Competitive programmer with 1700+ DSA problems solved.",
       "jobTitle": "Software Development Engineer",
       "worksFor": {
         "@type": "Organization",
-        "name": "Blue Yonder India Private Limited"
+        "name": "Blue Yonder India Private Limited",
+        "url": "https://blueyonder.com/",
+        "sameAs": "https://www.linkedin.com/company/blue-yonder/"
       },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "National Institute of Technology, Silchar"
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "National Institute of Technology, Silchar",
+          "url": "http://www.nits.ac.in/",
+          "sameAs": "https://en.wikipedia.org/wiki/National_Institute_of_Technology_Silchar"
+        }
+      ],
+      "knowsAbout": [
+        "Java", "Spring Boot", "Spring Framework", "React.js", "JavaScript", "TypeScript",
+        "Node.js", "Express.js", "Apache Kafka", "MongoDB", "PostgreSQL", "MySQL",
+        "Data Structures", "Algorithms", "System Design", "Microservices", "REST APIs",
+        "Docker", "Git", "Tailwind CSS", "Next.js", "Redux", "Full Stack Development",
+        "Backend Development", "Frontend Development", "Competitive Programming"
+      ],
+      "knowsLanguage": ["English", "Hindi"],
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
       },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Bihar",
+        "addressCountry": "India"
+      },
+      "email": "araj803125@gmail.com",
+      "telephone": "+91-6200667346",
       "sameAs": [
         "https://github.com/ankitraj6767",
         "https://www.linkedin.com/in/ankit-raj-427510216/",
         "https://x.com/ankitra14349112",
+        "https://twitter.com/ankitra14349112",
         "https://leetcode.com/u/smartwinner/",
-        "https://codeforces.com/profile/smartwinner"
+        "https://codeforces.com/profile/smartwinner",
+        "https://www.instagram.com/ankitraj6767/",
+        "https://www.facebook.com/share/1CuiFgFeKA/"
       ],
-      "knowsAbout": ["Java", "Spring Boot", "React", "JavaScript", "Kafka", "MongoDB", "SQL", "Data Structures", "Algorithms"],
-      "email": "araj803125@gmail.com"
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "B.Tech in Computer Science and Engineering",
+          "credentialCategory": "degree",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "National Institute of Technology, Silchar"
+          }
+        }
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Development Engineer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Bangalore"
+        },
+        "estimatedSalary": {
+          "@type": "MonetaryAmountDistribution",
+          "name": "Software Development Engineer Salary",
+          "currency": "INR"
+        },
+        "skills": "Java, Spring Boot, React, Kafka, MongoDB, PostgreSQL, Microservices"
+      }
     }
     </script>
+    
+    <!-- ==================== STRUCTURED DATA - WEBSITE ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ankit-raj.in/#website",
+      "url": "https://ankit-raj.in/",
+      "name": "Ankit Raj - Software Development Engineer Portfolio",
+      "alternateName": ["Ankit Raj Portfolio", "Ankit Raj Developer"],
+      "description": "Official portfolio website of Ankit Raj, Software Development Engineer at Blue Yonder",
+      "publisher": {
+        "@id": "https://ankit-raj.in/#person"
+      },
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://ankit-raj.in/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- ==================== STRUCTURED DATA - WEBPAGE ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://ankit-raj.in/#webpage",
+      "url": "https://ankit-raj.in/",
+      "name": "Ankit Raj - Software Development Engineer | Full Stack Developer",
+      "description": "Portfolio of Ankit Raj - Software Development Engineer at Blue Yonder specializing in Java, Spring Boot, React, and Kafka",
+      "isPartOf": {
+        "@id": "https://ankit-raj.in/#website"
+      },
+      "about": {
+        "@id": "https://ankit-raj.in/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://ankit-raj.in/profile.png"
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-12-19",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ankit-raj.in/"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- ==================== STRUCTURED DATA - PROFILE PAGE ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@id": "https://ankit-raj.in/#person"
+      },
+      "dateCreated": "2024-01-01",
+      "dateModified": "2025-12-19"
+    }
+    </script>
+    
+    <!-- ==================== STRUCTURED DATA - PROFESSIONAL SERVICE ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Ankit Raj - Software Development Services",
+      "url": "https://ankit-raj.in/",
+      "image": "https://ankit-raj.in/profile.png",
+      "description": "Full Stack Development, Backend Engineering, and Software Solutions by Ankit Raj",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "founder": {
+        "@id": "https://ankit-raj.in/#person"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.5941,
+          "longitude": 85.1376
+        },
+        "geoRadius": "50000"
+      },
+      "serviceType": [
+        "Full Stack Development",
+        "Backend Development",
+        "Frontend Development",
+        "API Development",
+        "Web Application Development",
+        "Software Engineering",
+        "Technical Consulting"
+      ]
+    }
+    </script>
+    
+    <!-- ==================== STRUCTURED DATA - ITEM LIST (PROJECTS) ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ankit Raj Projects",
+      "description": "Portfolio projects by Ankit Raj",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "ShopHub E-commerce",
+            "description": "Full-stack commerce platform with dynamic deals, flash sales, and admin analytics dashboard",
+            "url": "https://shophub-five.vercel.app/",
+            "applicationCategory": "E-commerce",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://ankit-raj.in/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "PG International School",
+            "description": "World-class school website with glassmorphism UI and comprehensive Admin CMS",
+            "url": "https://pg-international-school-5wp5.vercel.app/",
+            "applicationCategory": "Education",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://ankit-raj.in/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "LifeOps - Personal Life Management Platform",
+            "description": "Comprehensive personal productivity platform with task management and habit tracking",
+            "url": "https://life-ops-cyan.vercel.app/",
+            "applicationCategory": "Productivity",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://ankit-raj.in/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "CosmoScope - NASA Space Dashboard",
+            "description": "Interactive dashboard with NASA open data and space weather tracking",
+            "url": "https://cosmoscopes-ankitraj.netlify.app/",
+            "applicationCategory": "Education",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://ankit-raj.in/#person"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ==================== STRUCTURED DATA - FAQ ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Ankit Raj?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ankit Raj is a Software Development Engineer at Blue Yonder India Private Limited, specializing in Java, Spring Boot, React, and Kafka. He is a graduate of NIT Silchar with a B.Tech in Computer Science and Engineering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Ankit Raj's technical skills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ankit Raj is expert in Java, C++, Spring Boot, React, Node.js, Kafka, MongoDB, PostgreSQL, Docker, and various other technologies. He has solved 1700+ DSA problems and is a Codeforces Expert (1852 rating) and LeetCode Knight (1937 rating)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where did Ankit Raj study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ankit Raj completed his B.Tech in Computer Science and Engineering from National Institute of Technology (NIT) Silchar with a CGPA of 8.37/10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to contact Ankit Raj?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can contact Ankit Raj via email at araj803125@gmail.com or phone at +91-6200667346. You can also connect on LinkedIn at linkedin.com/in/ankit-raj-427510216 or visit the portfolio at ankit-raj.in"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What projects has Ankit Raj built?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ankit Raj has built multiple full-stack projects including ShopHub E-commerce, PG International School website, LifeOps productivity platform, and CosmoScope NASA dashboard. He has 20+ projects and 100+ contributions."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ==================== PRERENDER HINTS FOR SPA ==================== -->
+    <link rel="prerender" href="https://ankit-raj.in/about" />
+    <link rel="prerender" href="https://ankit-raj.in/projects" />
+    <link rel="prefetch" href="https://ankit-raj.in/experience" />
+    <link rel="prefetch" href="https://ankit-raj.in/contact" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- ==================== NOSCRIPT SEO FALLBACK ==================== -->
+    <noscript>
+      <div style="padding: 20px; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>Ankit Raj - Software Development Engineer</h1>
+        <p>Software Development Engineer at Blue Yonder | Full Stack Developer | Java, Spring Boot, React Expert</p>
+        <p>NIT Silchar CSE Graduate | Codeforces Expert (1852) | LeetCode Knight (1937) | 1700+ DSA Problems Solved</p>
+        <p>Contact: <a href="mailto:araj803125@gmail.com">araj803125@gmail.com</a> | <a href="tel:+916200667346">+91-6200667346</a></p>
+        <p>
+          <a href="https://github.com/ankitraj6767">GitHub</a> |
+          <a href="https://www.linkedin.com/in/ankit-raj-427510216/">LinkedIn</a> |
+          <a href="https://leetcode.com/u/smartwinner/">LeetCode</a> |
+          <a href="https://codeforces.com/profile/smartwinner">Codeforces</a>
+        </p>
+      </div>
+    </noscript>
   </body>
 </html>
