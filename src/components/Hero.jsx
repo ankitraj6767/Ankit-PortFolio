@@ -123,29 +123,31 @@ const Hero = () => {
           {/* Current Focus Card */}
           <div className="glass-card p-6">
             <div className="flex items-start justify-between gap-3">
-              <div className="text-center sm:text-left w-full sm:w-auto">
-                <p className="text-xs uppercase tracking-[0.2em] text-cyan-200">Current focus</p>
-                <p className="mt-1 text-xl font-semibold text-slate-50">Analytics platforms & DX</p>
-                <p className="mt-2 text-sm text-slate-400">
+              <div className="w-full">
+                <p className="text-xs uppercase tracking-[0.2em] text-cyan-200 text-center sm:text-left">Current focus</p>
+                <p className="mt-1 text-xl font-semibold text-slate-50 text-center sm:text-left">Analytics platforms & DX</p>
+                <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">
                   Building reliable services with observability, great onboarding, and thoughtful developer experience.
                 </p>
               </div>
             </div>
-            <div className="mt-4 space-y-3">
-              {[
-                'Spring Boot microservices',
-                'Kafka data pipelines',
-                'React + Next.js frontends',
-                'REST API design',
-                'MongoDB & PostgreSQL',
-                'Docker containerization',
-                'Observability & monitoring',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-slate-300 justify-center sm:justify-start">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400" />
-                  {item}
-                </div>
-              ))}
+            <div className="mt-4 flex flex-col items-center sm:items-start">
+              <div className="space-y-3">
+                {[
+                  'Spring Boot microservices',
+                  'Kafka data pipelines',
+                  'React + Next.js frontends',
+                  'REST API design',
+                  'MongoDB & PostgreSQL',
+                  'Docker containerization',
+                  'Observability & monitoring',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3 text-center text-slate-100">
               {highlightStats.map((stat) => (
@@ -162,8 +164,8 @@ const Hero = () => {
 
           {/* Signature Strengths Card */}
           <div className="glass-card p-5">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 text-center sm:text-left">
-              <div>
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3">
+              <div className="text-center sm:text-left">
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Signature strengths</p>
                 <h3 className="mt-1 text-lg font-semibold text-slate-50">What I bring</h3>
               </div>
@@ -177,7 +179,7 @@ const Hero = () => {
                 'Developer experience mindset—docs, tooling, and guardrails that speed teams up.',
                 'UI polish with clear information hierarchy and accessibility considerations.',
               ].map((text, index) => (
-                <div key={index} className="flex items-start gap-2 text-center sm:text-left justify-center sm:justify-start">
+                <div key={index} className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                   <span>{text}</span>
                 </div>
@@ -190,11 +192,11 @@ const Hero = () => {
       {/* Tech Stack Section */}
       <div className="glass-card mx-auto flex w-full max-w-6xl flex-col gap-3 p-4 sm:p-6 shadow shadow-cyan-500/5 text-center">
         <div className="text-xs uppercase tracking-[0.3em] text-slate-500">Tech I work with</div>
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 justify-items-center">
           {techStackPreview.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 cursor-default hover:scale-105 transition"
+              className="w-full rounded-full border border-slate-800 bg-slate-900/60 px-2 sm:px-3 py-1 text-xs sm:text-sm text-slate-200 shadow-sm shadow-cyan-500/5 cursor-default text-center truncate"
             >
               {tech}
             </span>

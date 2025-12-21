@@ -64,7 +64,7 @@ const About = () => {
 
       <div className="space-y-5">
         <div className="glass-card p-6 sm:p-7 shadow-lg shadow-cyan-500/5">
-          <div className="space-y-4 text-slate-300 leading-relaxed text-center sm:text-left">
+          <div className="space-y-4 text-slate-300 leading-relaxed text-justify">
             <p>
               I'm a software engineer who loves building clean, efficient, and scalable applications. I enjoy working across the stack—from designing APIs and databases to crafting intuitive user interfaces. My focus is on code that not only works but is maintainable, readable, and built to last.
             </p>
@@ -75,7 +75,7 @@ const About = () => {
 
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {introBullets.map((item) => (
-              <div key={item} className="flex items-start gap-3 text-sm text-slate-200 text-center sm:text-left justify-center sm:justify-start">
+              <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
                 <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                 <span>{item}</span>
               </div>
@@ -83,8 +83,8 @@ const About = () => {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center sm:text-left">
-              <h4 className="text-sm font-semibold text-slate-100">Technical snapshot</h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Technical snapshot</h4>
               <p className="mt-2 text-sm text-slate-300">
                 Comfortable hopping between frontend and backend—React, Spring Boot, Node.js, Java, JavaScript, MongoDB, and PostgreSQL. I pick tools to fit the problem, not the hype.
               </p>
@@ -92,8 +92,8 @@ const About = () => {
                 Currently exploring system design patterns, scalable architectures, and deeper cloud chops.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center sm:text-left">
-              <h4 className="text-sm font-semibold text-slate-100">How I got here</h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">How I got here</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-300">
                 <li>• Started coding out of curiosity about how products work under the hood.</li>
                 <li>• Built tools and full-stack apps to sharpen fundamentals and ship useful features.</li>
@@ -103,22 +103,22 @@ const About = () => {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center sm:text-left">
-              <h4 className="text-sm font-semibold text-slate-100">Engineering philosophy</h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Engineering philosophy</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-300">
                 {philosophy.map((item) => (
-                  <li key={item} className="flex gap-2 justify-center sm:justify-start">
+                  <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center sm:text-left">
-              <h4 className="text-sm font-semibold text-slate-100">How I work with teams</h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">How I work with teams</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-300">
                 {collaboration.map((item) => (
-                  <li key={item} className="flex gap-2 justify-center sm:justify-start">
+                  <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
@@ -128,11 +128,11 @@ const About = () => {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center sm:text-left">
-              <h4 className="text-sm font-semibold text-slate-100">Human side</h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Human side</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-300">
                 {personal.map((item) => (
-                  <li key={item} className="flex gap-2 justify-center sm:justify-start">
+                  <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
@@ -171,9 +171,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="glass-card p-5 sm:p-6 text-center sm:text-left">
-          <h4 className="text-sm font-semibold text-slate-100">Coding profiles</h4>
-          <p className="mt-2 text-sm text-slate-400">A glimpse into my problem-solving practice.</p>
+        <div className="glass-card p-5 sm:p-6">
+          <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Coding profiles</h4>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">A glimpse into my problem-solving practice.</p>
           <div className="mt-3 flex flex-wrap gap-3 justify-center sm:justify-start">
             {[
               { name: 'LeetCode', href: codingProfiles.leetcode },
@@ -193,17 +193,17 @@ const About = () => {
         </div>
 
         {/* Achievements Section */}
-        <div className="glass-card p-5 sm:p-6 text-center sm:text-left">
-          <h4 className="text-sm font-semibold text-slate-100">Key Achievements</h4>
-          <p className="mt-2 text-sm text-slate-400">Milestones that reflect my journey and growth.</p>
+        <div className="glass-card p-5 sm:p-6">
+          <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Key Achievements</h4>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Milestones that reflect my journey and growth.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {achievements.map((achievement) => (
               <div
                 key={achievement.title}
-                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4 justify-center sm:justify-start"
+                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4"
               >
                 <span className="text-2xl">{achievement.icon}</span>
-                <div className="text-center sm:text-left">
+                <div>
                   <h5 className="text-sm font-semibold text-cyan-200">{achievement.title}</h5>
                   <p className="text-xs text-slate-400">{achievement.desc}</p>
                 </div>
@@ -213,18 +213,18 @@ const About = () => {
         </div>
 
         {/* Tech Expertise Section */}
-        <div className="glass-card p-5 sm:p-6 text-center sm:text-left">
-          <h4 className="text-sm font-semibold text-slate-100">Technical Expertise</h4>
-          <p className="mt-2 text-sm text-slate-400">Technologies I work with daily and love building with.</p>
+        <div className="glass-card p-5 sm:p-6">
+          <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Technical Expertise</h4>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Technologies I work with daily and love building with.</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {techExpertise.map((category) => (
               <div key={category.category} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
-                <h5 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold">{category.category}</h5>
-                <div className="mt-3 flex flex-wrap gap-2 justify-center sm:justify-start">
+                <h5 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold text-center">{category.category}</h5>
+                <div className="mt-3 grid grid-cols-3 gap-2">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-slate-700 bg-slate-800/60 px-2.5 py-1 text-xs text-slate-300"
+                      className="rounded-full border border-slate-700 bg-slate-800/60 px-2 py-1 text-xs text-slate-300 text-center truncate"
                     >
                       {skill}
                     </span>
@@ -236,9 +236,9 @@ const About = () => {
         </div>
 
         {/* What I'm Learning Section */}
-        <div className="glass-card p-5 sm:p-6 text-center sm:text-left">
-          <h4 className="text-sm font-semibold text-slate-100">Currently Learning & Exploring</h4>
-          <p className="mt-2 text-sm text-slate-400">Staying curious and expanding my skill set.</p>
+        <div className="glass-card p-5 sm:p-6">
+          <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Currently Learning & Exploring</h4>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Staying curious and expanding my skill set.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'System Design', desc: 'Scalable architecture patterns, distributed systems' },
@@ -250,10 +250,10 @@ const About = () => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4 justify-center sm:justify-start"
+                className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-4"
               >
                 <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                <div className="text-center sm:text-left">
+                <div>
                   <h5 className="text-sm font-semibold text-slate-200">{item.title}</h5>
                   <p className="text-xs text-slate-400">{item.desc}</p>
                 </div>
@@ -262,15 +262,15 @@ const About = () => {
           </div>
         </div>
 
-        <div className="glass-card p-5 sm:p-6 text-center sm:text-left">
-          <h4 className="text-sm font-semibold text-slate-100">Mini timeline</h4>
+        <div className="glass-card p-5 sm:p-6">
+          <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Mini timeline</h4>
           <ul className="mt-3 space-y-3 text-sm text-slate-300">
             {[
               'Started coding out of curiosity—small scripts, experiments, and learning the web.',
               'Built first full-stack projects and explored backend + frontend ecosystems.',
               'Now at Blue Yonder, growing as a backend engineer while polishing DX and product craft.',
             ].map((item, index) => (
-              <li key={index} className="flex gap-3 justify-center sm:justify-start">
+              <li key={index} className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                 <span>{item}</span>
               </li>

@@ -43,11 +43,11 @@ const Skills = () => {
               </span>
             </div>
             <p className="mt-2 text-sm text-slate-400">{group.description}</p>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
               {group.items.map((skill, skillIndex) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default"
+                  className="rounded-full border border-slate-800 bg-slate-900/60 px-2 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default text-center truncate"
                   
                   
                   
@@ -124,11 +124,11 @@ const Skills = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-slate-500">Team</span>
           </div>
           <p className="mt-2 text-sm text-slate-400">{softSkills.description}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-3 grid grid-cols-2 gap-2">
             {softSkills.items.map((skill, index) => (
               <span
                 key={skill}
-                className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default"
+                className="rounded-full border border-slate-800 bg-slate-900/60 px-2 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default text-center"
                 
                 
                 
