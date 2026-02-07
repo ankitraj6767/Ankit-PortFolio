@@ -47,7 +47,7 @@
 :root[data-theme='light'] {
   color-scheme: light;
 
-  --ink: 246 245 242;
+  --ink: 235 245 251;
   --card: 255 255 253;
 
   --slate-50: 17 24 39;
@@ -70,13 +70,13 @@
   --blue-400: 190 145 70;
   --blue-500: 153 113 46;
 
-  --surface-1: 250 248 242;
-  --surface-2: 244 247 252;
-  --surface-3: 235 240 248;
-  --glow-primary: 58 94 151;
-  --glow-secondary: 180 139 72;
-  --line-strength: 0.058;
-  --noise-opacity: 0.017;
+  --surface-1: 243 247 252;
+  --surface-2: 227 239 248;
+  --surface-3: 193 216 230;
+  --glow-primary: 112 151 190;
+  --glow-secondary: 140 172 204;
+  --line-strength: 0.03;
+  --noise-opacity: 0.004;
   --card-border: 173 180 193;
   --card-shadow: 17 24 39;
 }
@@ -133,9 +133,8 @@ body::before {
 
 :root[data-theme='light'] body::before {
   background:
-    radial-gradient(120% 78% at 0% -12%, rgba(221, 184, 120, 0.28) 0%, transparent 60%),
-    radial-gradient(85% 74% at 100% 0%, rgba(var(--glow-primary), 0.18) 0%, transparent 64%),
-    radial-gradient(70% 66% at 50% 100%, rgba(var(--glow-primary), 0.1) 0%, transparent 72%),
+    radial-gradient(140% 100% at 10% -20%, rgba(255, 255, 255, 0.75) 0%, transparent 62%),
+    radial-gradient(100% 70% at 100% 0%, rgba(198, 218, 238, 0.32) 0%, transparent 70%),
     linear-gradient(180deg, rgb(var(--surface-1)) 0%, rgb(var(--surface-2)) 54%, rgb(var(--surface-3)) 100%);
 }
 
@@ -158,12 +157,7 @@ body::after {
 }
 
 :root[data-theme='light'] body::after {
-  background:
-    radial-gradient(circle at 18% 18%, rgba(232, 196, 130, 0.16) 0%, transparent 31%),
-    radial-gradient(circle at 82% 18%, rgba(var(--glow-primary), 0.14) 0%, transparent 30%),
-    radial-gradient(circle at 30% 72%, rgba(var(--glow-primary), 0.1) 0%, transparent 38%),
-    radial-gradient(circle at 74% 82%, rgba(var(--glow-secondary), 0.1) 0%, transparent 34%);
-  opacity: 0.6;
+  display: none;
 }
 
 @keyframes mesh-rotate {
@@ -228,21 +222,7 @@ body::after {
 }
 
 :root[data-theme='light'] #root::before {
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 220px,
-      rgba(var(--glow-primary), 0.05) 220px,
-      rgba(var(--glow-primary), 0.05) 221px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 220px,
-      rgba(var(--glow-secondary), 0.03) 220px,
-      rgba(var(--glow-secondary), 0.03) 221px
-    );
+  display: none;
 }
 
 @keyframes hero-glow-rotate {
@@ -270,14 +250,7 @@ body::after {
 }
 
 :root[data-theme='light'] .animated-top-border {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(220, 179, 110, 0.34) 22%,
-    rgba(var(--glow-primary), 0.5) 50%,
-    rgba(var(--glow-secondary), 0.34) 78%,
-    transparent 100%
-  );
+  display: none;
 }
 
 @keyframes border-flow {
@@ -305,13 +278,7 @@ body::after {
 }
 
 :root[data-theme='light'] .spotlight {
-  background: radial-gradient(
-    circle at center,
-    rgba(226, 189, 124, 0.2) 0%,
-    rgba(var(--glow-primary), 0.14) 30%,
-    transparent 72%
-  );
-  opacity: 0.52;
+  display: none;
 }
 
 @keyframes spotlight-breathe {
@@ -350,15 +317,7 @@ body::after {
 
 :root[data-theme='light'] .orb-2,
 :root[data-theme='light'] .orb-3 {
-  opacity: 0.42;
-}
-
-:root[data-theme='light'] .orb-2 {
-  background: radial-gradient(circle, rgba(var(--glow-primary), 0.15) 0%, rgba(var(--glow-primary), 0.05) 34%, transparent 72%);
-}
-
-:root[data-theme='light'] .orb-3 {
-  background: radial-gradient(circle, rgba(var(--glow-secondary), 0.14) 0%, rgba(var(--glow-secondary), 0.04) 40%, transparent 72%);
+  display: none;
 }
 
 @keyframes orb-float-1 {
@@ -400,6 +359,10 @@ body::after {
 }
 
 :root[data-theme='light'] .stars-container {
+  display: none;
+}
+
+:root[data-theme='light'] .noise-overlay {
   display: none;
 }
 
