@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,6 +13,28 @@ import Footer from './components/Footer'
 import FloatingWhatsapp from './components/FloatingWhatsapp'
 import ScrollToTop from './components/ScrollToTop'
 import SEOHelper from './components/SEOHelper'
+
+const THEME_STORAGE_KEY = 'portfolio-theme'
+
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return 'dark'
+  const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY)
+  const initialTheme = savedTheme === 'dark' || savedTheme === 'light'
+    ? savedTheme
+    : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+  document.documentElement.setAttribute('data-theme', initialTheme)
+  return initialTheme
+}
+
+const createStars = (count = 15) =>
+  [...Array(count)].map((_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 5}s`,
+    duration: `${4 + Math.random() * 4}s`,
+    size: `${1 + Math.random() * 2}px`,
+  }))
 
 const Page = ({ children }) => (
   <main className="flex flex-col gap-16 sm:gap-20 pt-20 sm:pt-24 pb-32 lg:pb-36">
@@ -35,16 +57,17 @@ const NotFound = () => (
 )
 
 const App = () => {
-  // Generate random stars - reduced count for mobile performance
-  const stars = useMemo(() => 
-    [...Array(15)].map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 5}s`,
-      duration: `${4 + Math.random() * 4}s`,
-      size: `${1 + Math.random() * 2}px`,
-    })), []);
+  const [theme, setTheme] = useState(getInitialTheme)
+  const [stars] = useState(() => createStars())
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((previousTheme) => (previousTheme === 'dark' ? 'light' : 'dark'))
+  }
 
   return (
     <BrowserRouter>
@@ -78,7 +101,7 @@ const App = () => {
         </div>
         
         <ScrollToTop />
-        <Navbar />
+        <Navbar theme={theme} onToggleTheme={toggleTheme} />
         <div className="flex-1">
         <Routes>
           <Route

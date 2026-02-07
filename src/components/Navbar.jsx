@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
+import { AnimatePresence } from 'framer-motion'
+import { FiMenu, FiX, FiDownload, FiMoon, FiSun } from 'react-icons/fi'
 import { Link, useLocation } from 'react-router-dom'
 import { navLinks, resumeLink } from '../data/content'
 
 const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
   <div className={`${isMobile ? 'flex flex-col gap-5 py-4' : 'hidden lg:flex items-center gap-3 xl:gap-6'}`}>
-    {navLinks.map(({ label, href }, index) => {
+    {navLinks.map(({ label, href }) => {
       const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
       return (
         <div
@@ -30,7 +30,21 @@ const NavLinks = ({ pathname, isMobile = false, onNavigate }) => (
   </div>
 )
 
-const Navbar = () => {
+const ThemeToggle = ({ theme, onToggleTheme, fullWidth = false }) => (
+  <button
+    type="button"
+    onClick={onToggleTheme}
+    aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+    className={`inline-flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2 text-xs xl:text-sm font-semibold text-slate-200 shadow-sm shadow-cyan-500/10 transition hover:border-cyan-500/40 hover:text-cyan-200 ${
+      fullWidth ? 'w-full' : ''
+    }`}
+  >
+    {theme === 'dark' ? <FiSun className="shrink-0" /> : <FiMoon className="shrink-0" />}
+    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+  </button>
+)
+
+const Navbar = ({ theme, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [elevated, setElevated] = useState(false)
   const { pathname } = useLocation()
@@ -46,8 +60,8 @@ const Navbar = () => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         elevated 
-          ? 'bg-[#0a0a12]/95 backdrop-blur-2xl border-b border-cyan-500/30 shadow-[0_4px_40px_rgba(56,189,248,0.12)]' 
-          : 'bg-[#0a0a12]/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-card/95 backdrop-blur-2xl border-b border-cyan-500/30 shadow-[0_14px_40px_rgba(15,23,42,0.2)]'
+          : 'bg-card/80 backdrop-blur-xl border-b border-slate-800/60'
       }`}
       
       
@@ -73,6 +87,7 @@ const Navbar = () => {
         <NavLinks pathname={pathname} />
 
         <div className="hidden items-center gap-3 lg:flex shrink-0">
+          <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
           <a
             href={resumeLink}
             className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold text-cyan-100 shadow shadow-cyan-500/10 transition neon-hover whitespace-nowrap"
@@ -86,7 +101,15 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            type="button"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
+            onClick={onToggleTheme}
+          >
+            {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
+          </button>
           <button
             aria-label="Toggle navigation"
             className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
@@ -131,6 +154,9 @@ const Navbar = () => {
             
           >
             <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
+            <div className="mt-2">
+              <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} fullWidth />
+            </div>
             <a
               href={resumeLink}
               onClick={() => setIsOpen(false)}
