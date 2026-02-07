@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -103,19 +102,6 @@ body {
   position: relative;
   overflow-x: hidden;
   background: rgb(var(--ink));
-}
-
-:root[data-theme='light'] h1,
-:root[data-theme='light'] h2 {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
-:root[data-theme='light'] .font-orbitron {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  letter-spacing: 0.02em;
-  font-weight: 700;
 }
 
 body::before {
