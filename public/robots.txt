@@ -23,6 +23,9 @@ Crawl-delay: 1
 User-agent: Googlebot-Image
 Allow: /profile.png
 Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /favicon-32x32.png
+Allow: /favicon-16x16.png
 
 # Bingbot specific rules
 User-agent: Bingbot

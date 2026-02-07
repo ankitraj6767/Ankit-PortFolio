@@ -6,6 +6,12 @@
 /robots.txt     /robots.txt     200
 /manifest.json  /manifest.json  200
 /humans.txt     /humans.txt     200
+/favicon.ico    /favicon.ico    200
+/favicon.svg    /favicon.svg    200
+/favicon-32x32.png    /favicon-32x32.png    200
+/favicon-16x16.png    /favicon-16x16.png    200
+/apple-touch-icon.png    /apple-touch-icon.png    200
+/vite.svg       /favicon.svg    301
 
 # Profile image for SEO
 /profile.png    /profile.png    200
