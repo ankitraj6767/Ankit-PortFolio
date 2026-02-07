@@ -562,6 +562,14 @@ body::after {
   animation: gradient-flow 3.2s ease infinite;
 }
 
+:root:not([data-theme='light']) .gradient-text-animated {
+  background: none;
+  color: rgb(var(--cyan-200));
+  -webkit-text-fill-color: currentColor;
+  text-shadow: 0 0 18px rgba(var(--glow-primary), 0.16);
+  animation: none;
+}
+
 :root[data-theme='light'] .gradient-text-animated {
   background: none;
   color: rgb(var(--cyan-400));
