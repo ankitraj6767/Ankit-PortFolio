@@ -22,7 +22,7 @@ Crawl-delay: 1
 # Googlebot Image
 User-agent: Googlebot-Image
 Allow: /profile.png
-Allow: /vite.svg
+Allow: /favicon.svg
 
 # Bingbot specific rules
 User-agent: Bingbot
