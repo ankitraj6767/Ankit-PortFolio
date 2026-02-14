@@ -56,13 +56,17 @@ const Navbar = ({ theme, onToggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const navShellClass = elevated
+    ? theme === 'dark'
+      ? 'bg-slate-950 border-b border-white/20 shadow-[0_14px_40px_rgba(2,6,23,0.75)]'
+      : 'bg-card/95 backdrop-blur-2xl border-b border-cyan-500/30 shadow-[0_14px_40px_rgba(15,23,42,0.2)]'
+    : theme === 'dark'
+      ? 'bg-slate-950 border-b border-white/15'
+      : 'bg-card/80 backdrop-blur-xl border-b border-slate-800/60'
+
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        elevated 
-          ? 'bg-card/95 backdrop-blur-2xl border-b border-cyan-500/30 shadow-[0_14px_40px_rgba(15,23,42,0.2)]'
-          : 'bg-card/80 backdrop-blur-xl border-b border-slate-800/60'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${navShellClass}`}
       
       
       
@@ -105,14 +109,18 @@ const Navbar = ({ theme, onToggleTheme }) => {
           <button
             type="button"
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
+            className={`rounded-lg border p-2 text-slate-200 shadow-md shadow-cyan-500/5 ${
+              theme === 'dark' ? 'border-white/30 bg-slate-900' : 'border-slate-800 bg-card/80'
+            }`}
             onClick={onToggleTheme}
           >
             {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
           </button>
           <button
             aria-label="Toggle navigation"
-            className="rounded-lg border border-slate-800 bg-card/80 p-2 text-slate-200 shadow-md shadow-cyan-500/5"
+            className={`rounded-lg border p-2 text-slate-200 shadow-md shadow-cyan-500/5 ${
+              theme === 'dark' ? 'border-white/30 bg-slate-900' : 'border-slate-800 bg-card/80'
+            }`}
             onClick={() => setIsOpen((open) => !open)}
             
             
@@ -147,7 +155,9 @@ const Navbar = ({ theme, onToggleTheme }) => {
       <AnimatePresence>
         {isOpen && (
           <div 
-            className="lg:hidden border-t border-slate-800/60 bg-card px-6 pb-4 overflow-hidden"
+            className={`lg:hidden border-t px-6 pb-4 overflow-hidden ${
+              theme === 'dark' ? 'border-white/15 bg-slate-950' : 'border-slate-800/60 bg-card'
+            }`}
             
             
             exit={{ height: 0, opacity: 0 }}
