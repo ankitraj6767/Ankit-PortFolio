@@ -154,9 +154,6 @@ const Navbar = ({ theme, onToggleTheme }) => {
             
           >
             <NavLinks pathname={pathname} isMobile onNavigate={() => setIsOpen(false)} />
-            <div className="mt-2">
-              <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} fullWidth />
-            </div>
             <a
               href={resumeLink}
               onClick={() => setIsOpen(false)}
