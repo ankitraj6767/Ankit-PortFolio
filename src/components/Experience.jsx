@@ -63,10 +63,6 @@ const Experience = () => {
                 <li 
                   key={item}
                   className="flex items-start gap-2"
-                  
-                  
-                  
-                  
                 >
                   <span 
                     className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0"
