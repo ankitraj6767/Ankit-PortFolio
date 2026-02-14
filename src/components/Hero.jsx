@@ -58,7 +58,7 @@ const Hero = () => {
                 Software Engineer
               </span>
             </h1>
-            <p className="text-lg text-slate-300 text-center">
+            <p className="text-lg text-slate-300 justified-copy">
               I design and ship resilient products with Spring Boot, React, and cloud tooling. From architecture to UI polish, I care about reliability, performance, and user trust.
             </p>
           </div>
@@ -112,7 +112,7 @@ const Hero = () => {
                 className="glass-card p-4 text-center sm:text-left"
               >
                 <p className="text-sm font-semibold text-slate-100">{item.title}</p>
-                <p className="mt-2 text-sm text-slate-400">{item.detail}</p>
+                <p className="mt-2 text-sm text-slate-400 justified-copy">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -126,7 +126,7 @@ const Hero = () => {
               <div className="w-full">
                 <p className="text-xs uppercase tracking-[0.2em] text-cyan-200 text-center sm:text-left">Current focus</p>
                 <p className="mt-1 text-xl font-semibold text-slate-50 text-center sm:text-left">Analytics platforms & DX</p>
-                <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">
+                <p className="mt-2 text-sm text-slate-400 justified-copy text-left">
                   Building reliable services with observability, great onboarding, and thoughtful developer experience.
                 </p>
               </div>
@@ -181,7 +181,7 @@ const Hero = () => {
               ].map((text, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                  <span>{text}</span>
+                  <span className="justified-copy">{text}</span>
                 </div>
               ))}
             </div>

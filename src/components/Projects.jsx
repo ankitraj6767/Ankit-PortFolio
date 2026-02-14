@@ -21,7 +21,7 @@ const Projects = () => {
         
         
       >
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <article
             key={project.title}
             className="glass-card h-full p-6 transition duration-300 tilt-card group"
@@ -47,7 +47,7 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 <p 
-                  className="mt-2 text-sm text-slate-400"
+                  className="mt-2 text-sm text-slate-400 justified-copy"
                   
                   
                   
@@ -82,7 +82,7 @@ const Projects = () => {
               
               
             >
-              {project.tech.map((item, techIndex) => (
+              {project.tech.map((item) => (
                 <span
                   key={item}
                   className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-100 ring-1 ring-cyan-500/30"

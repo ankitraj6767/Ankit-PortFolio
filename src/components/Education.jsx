@@ -19,7 +19,7 @@ const Education = () => {
         
         
       >
-        {education.map((item, index) => (
+        {education.map((item) => (
           <div 
             key={item.school} 
             className="glass-card p-6 sm:p-7 transition duration-300 tilt-card"
@@ -72,7 +72,7 @@ const Education = () => {
 
             {item.summary && (
               <p 
-                className="mt-4 text-sm text-slate-300 leading-relaxed"
+                className="mt-4 text-sm text-slate-300 leading-relaxed justified-copy"
                 
                 
                 
@@ -84,7 +84,7 @@ const Education = () => {
 
             {item.highlights && item.highlights.length > 0 && (
               <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                {item.highlights.map((point, pointIndex) => (
+                {item.highlights.map((point) => (
                   <li 
                     key={point}
                     className="flex gap-2"
@@ -98,7 +98,7 @@ const Education = () => {
                       
                       
                     />
-                    <span>{point}</span>
+                    <span className="justified-copy">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -115,7 +115,7 @@ const Education = () => {
               >
                 <h4 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold mb-2">Key Courses</h4>
                 <div className="flex flex-wrap gap-2">
-                  {item.courses.map((course, courseIndex) => (
+                  {item.courses.map((course) => (
                     <span
                       key={course}
                       className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs text-slate-300"
@@ -143,7 +143,7 @@ const Education = () => {
               >
                 <h4 className="text-xs uppercase tracking-wider text-cyan-300 font-semibold mb-2">Activities & Achievements</h4>
                 <div className="flex flex-wrap gap-2">
-                  {item.activities.map((activity, actIndex) => (
+                  {item.activities.map((activity) => (
                     <span
                       key={activity}
                       className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-200"

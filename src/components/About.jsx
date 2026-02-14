@@ -77,7 +77,7 @@ const About = () => {
             {introBullets.map((item) => (
               <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
                 <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                <span>{item}</span>
+                <span className="justified-copy">{item}</span>
               </div>
             ))}
           </div>
@@ -85,19 +85,19 @@ const About = () => {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
               <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Technical snapshot</h4>
-              <p className="mt-2 text-sm text-slate-300">
+              <p className="mt-2 text-sm text-slate-300 justified-copy">
                 Comfortable hopping between frontend and backend—React, Spring Boot, Node.js, Java, JavaScript, MongoDB, and PostgreSQL. I pick tools to fit the problem, not the hype.
               </p>
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-2 text-sm text-slate-400 justified-copy">
                 Currently exploring system design patterns, scalable architectures, and deeper cloud chops.
               </p>
             </div>
             <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
               <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">How I got here</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-300">
-                <li>• Started coding out of curiosity about how products work under the hood.</li>
-                <li>• Built tools and full-stack apps to sharpen fundamentals and ship useful features.</li>
-                <li>• Now focused on impactful products, open-source contributions, and tough engineering problems.</li>
+                <li className="justified-copy">• Started coding out of curiosity about how products work under the hood.</li>
+                <li className="justified-copy">• Built tools and full-stack apps to sharpen fundamentals and ship useful features.</li>
+                <li className="justified-copy">• Now focused on impactful products, open-source contributions, and tough engineering problems.</li>
               </ul>
             </div>
           </div>
@@ -109,7 +109,7 @@ const About = () => {
                 {philosophy.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                    <span>{item}</span>
+                    <span className="justified-copy">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -120,7 +120,7 @@ const About = () => {
                 {collaboration.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                    <span>{item}</span>
+                    <span className="justified-copy">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -134,7 +134,7 @@ const About = () => {
                 {personal.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                    <span>{item}</span>
+                    <span className="justified-copy">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -149,7 +149,7 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-3 text-xs text-slate-500 text-center">
+              <div className="mt-3 text-xs text-slate-500 text-center justified-copy">
                 Always learning; focused on system design, scalability, and solid developer experience.
               </div>
             </div>
@@ -173,7 +173,7 @@ const About = () => {
 
         <div className="glass-card p-5 sm:p-6">
           <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Coding profiles</h4>
-          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">A glimpse into my problem-solving practice.</p>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left justified-copy">A glimpse into my problem-solving practice.</p>
           <div className="mt-3 flex flex-wrap gap-3 justify-center sm:justify-start">
             {[
               { name: 'LeetCode', href: codingProfiles.leetcode },
@@ -195,7 +195,7 @@ const About = () => {
         {/* Achievements Section */}
         <div className="glass-card p-5 sm:p-6">
           <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Key Achievements</h4>
-          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Milestones that reflect my journey and growth.</p>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left justified-copy">Milestones that reflect my journey and growth.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {achievements.map((achievement) => (
               <div
@@ -205,7 +205,7 @@ const About = () => {
                 <span className="text-2xl">{achievement.icon}</span>
                 <div>
                   <h5 className="text-sm font-semibold text-cyan-200">{achievement.title}</h5>
-                  <p className="text-xs text-slate-400">{achievement.desc}</p>
+                  <p className="text-xs text-slate-400 justified-copy">{achievement.desc}</p>
                 </div>
               </div>
             ))}
@@ -215,7 +215,7 @@ const About = () => {
         {/* Tech Expertise Section */}
         <div className="glass-card p-5 sm:p-6">
           <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Technical Expertise</h4>
-          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Technologies I work with daily and love building with.</p>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left justified-copy">Technologies I work with daily and love building with.</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {techExpertise.map((category) => (
               <div key={category.category} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
@@ -238,7 +238,7 @@ const About = () => {
         {/* What I'm Learning Section */}
         <div className="glass-card p-5 sm:p-6">
           <h4 className="text-sm font-semibold text-slate-100 text-center sm:text-left">Currently Learning & Exploring</h4>
-          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left">Staying curious and expanding my skill set.</p>
+          <p className="mt-2 text-sm text-slate-400 text-center sm:text-left justified-copy">Staying curious and expanding my skill set.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'System Design', desc: 'Scalable architecture patterns, distributed systems' },
@@ -255,7 +255,7 @@ const About = () => {
                 <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
                 <div>
                   <h5 className="text-sm font-semibold text-slate-200">{item.title}</h5>
-                  <p className="text-xs text-slate-400">{item.desc}</p>
+                  <p className="text-xs text-slate-400 justified-copy">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -272,7 +272,7 @@ const About = () => {
             ].map((item, index) => (
               <li key={index} className="flex gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0" />
-                <span>{item}</span>
+                <span className="justified-copy">{item}</span>
               </li>
             ))}
           </ul>

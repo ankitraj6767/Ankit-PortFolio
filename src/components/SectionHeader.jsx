@@ -13,7 +13,7 @@ const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
         {title}
       </h2>
       {description && (
-        <p className={`text-slate-400 max-w-2xl ${isCenter ? 'mx-auto' : ''}`}>
+        <p className={`text-slate-400 max-w-2xl justified-copy ${isCenter ? 'mx-auto' : ''}`}>
           {description}
         </p>
       )}

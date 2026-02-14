@@ -161,7 +161,7 @@ const Contact = () => {
             }}
           >
             <h3 className="text-lg font-semibold text-slate-50">Prefer direct contact?</h3>
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-slate-400 justified-copy">
               Reach out via email or phone, or find me on the links below. I reply quickly to thoughtful messages.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -170,7 +170,7 @@ const Contact = () => {
                 { icon: FiPhone, label: socialLinks.phone, href: `tel:${socialLinks.phone?.replace(/\D/g, '') || ''}` },
                 { icon: FiGithub, label: 'GitHub', href: socialLinks.github, external: true },
                 { icon: FiLinkedin, label: 'LinkedIn', href: socialLinks.linkedin, external: true },
-              ].map((link, index) => (
+              ].map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -209,7 +209,7 @@ const Contact = () => {
               />
               Typically responds within a business day
             </div>
-            <p className="mt-3 text-slate-400">
+            <p className="mt-3 text-slate-400 justified-copy">
               I appreciate concise context: what you need, timelines, and any links or docs that help me understand your goals.
             </p>
           </div>

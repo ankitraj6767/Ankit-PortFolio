@@ -13,7 +13,7 @@ const Experience = () => {
       />
 
       <div className="space-y-8">
-        {experiences.map((exp, index) => (
+        {experiences.map((exp) => (
           <div 
             key={exp.company + exp.role} 
             className="glass-card p-5 sm:p-6 transition duration-300 tilt-card relative overflow-hidden"
@@ -38,7 +38,7 @@ const Experience = () => {
                   {exp.role}
                 </h3>
                 <p 
-                  className="text-sm text-slate-400"
+                  className="text-sm text-slate-400 justified-copy"
                   
                   
                   
@@ -59,7 +59,7 @@ const Experience = () => {
               </span>
             </div>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
-              {exp.achievements.map((item, achIndex) => (
+              {exp.achievements.map((item) => (
                 <li 
                   key={item}
                   className="flex items-start gap-2"
@@ -71,7 +71,7 @@ const Experience = () => {
                   <span 
                     className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400 flex-shrink-0"
                   />
-                  <span>{item}</span>
+                  <span className="justified-copy">{item}</span>
                 </li>
               ))}
             </ul>

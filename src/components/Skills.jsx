@@ -19,7 +19,7 @@ const Skills = () => {
         
         
       >
-        {skillCategories.map((group, index) => (
+        {skillCategories.map((group) => (
           <div
             key={group.title}
             className="glass-card flex h-full flex-col p-5 sm:p-6 transition duration-300 tilt-card"
@@ -42,9 +42,9 @@ const Skills = () => {
                 Core
               </span>
             </div>
-            <p className="mt-2 text-sm text-slate-400">{group.description}</p>
+            <p className="mt-2 text-sm text-slate-400 justified-copy">{group.description}</p>
             <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {group.items.map((skill, skillIndex) => (
+              {group.items.map((skill) => (
                 <span
                   key={skill}
                   className="rounded-full border border-slate-800 bg-slate-900/60 px-2 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default text-center truncate"
@@ -88,9 +88,9 @@ const Skills = () => {
               CP
             </span>
           </div>
-          <p className="mt-2 text-sm text-slate-400">{cpHighlights.description}</p>
+          <p className="mt-2 text-sm text-slate-400 justified-copy">{cpHighlights.description}</p>
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
-            {cpHighlights.bullets.map((bullet, index) => (
+            {cpHighlights.bullets.map((bullet) => (
               <li 
                 key={bullet} 
                 className="flex gap-3"
@@ -102,7 +102,7 @@ const Skills = () => {
                 <span 
                   className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
                 />
-                <span>{bullet}</span>
+                <span className="justified-copy">{bullet}</span>
               </li>
             ))}
           </ul>
@@ -123,9 +123,9 @@ const Skills = () => {
             <h3 className="text-lg font-semibold text-slate-50">{softSkills.title}</h3>
             <span className="text-xs uppercase tracking-[0.2em] text-slate-500">Team</span>
           </div>
-          <p className="mt-2 text-sm text-slate-400">{softSkills.description}</p>
+          <p className="mt-2 text-sm text-slate-400 justified-copy">{softSkills.description}</p>
           <div className="mt-3 grid grid-cols-2 gap-2">
-            {softSkills.items.map((skill, index) => (
+            {softSkills.items.map((skill) => (
               <span
                 key={skill}
                 className="rounded-full border border-slate-800 bg-slate-900/60 px-2 py-1 text-sm text-slate-200 shadow-sm shadow-cyan-500/5 transition neon-hover cursor-default text-center"
@@ -157,9 +157,9 @@ const Skills = () => {
           <h3 className="text-lg font-semibold text-slate-50">Skill levels</h3>
           <span className="text-xs uppercase tracking-[0.2em] text-slate-500">Snapshot</span>
         </div>
-        <p className="mt-2 text-sm text-slate-400">A quick, honest view of my strongest areas right now.</p>
+        <p className="mt-2 text-sm text-slate-400 justified-copy">A quick, honest view of my strongest areas right now.</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {skillLevels.map((skill, index) => (
+          {skillLevels.map((skill) => (
             <div 
               key={skill.name} 
               className="rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3 shadow-sm shadow-cyan-500/5 neon-hover"

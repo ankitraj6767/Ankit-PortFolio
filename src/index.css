@@ -403,6 +403,33 @@ body::after {
   @apply mx-auto max-w-6xl px-6 sm:px-10;
 }
 
+.justified-copy {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.glass-card p,
+.glass-card li,
+.card-surface p,
+.card-surface li {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.glass-card li span:last-child,
+.card-surface li span:last-child {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .card-surface {
   @apply rounded-2xl;
   background: linear-gradient(145deg, rgba(var(--card), 0.95) 0%, rgba(var(--slate-900), 0.72) 100%);
