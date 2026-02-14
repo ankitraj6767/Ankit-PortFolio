@@ -45,8 +45,10 @@
   --glow-secondary: 151 186 226;
   --line-strength: 0.016;
   --noise-opacity: 0.01;
-  --card-border: 112 131 165;
+  --card-border: 255 255 255;
   --card-shadow: 3 8 18;
+  --border-visible: 255 255 255;
+  --border-visible-strong: 255 255 255;
 
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
@@ -100,6 +102,11 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.25rem;
+}
+
+:root:not([data-theme='light']) [class*='border-slate-800'],
+:root:not([data-theme='light']) [class*='border-slate-700'] {
+  border-color: rgba(var(--border-visible), 0.66);
 }
 
 .rounded-lg {
@@ -479,6 +486,7 @@ body::after {
 
 .card-surface {
   @apply rounded-2xl;
+  position: relative;
   background: linear-gradient(145deg, rgba(var(--card), 0.95) 0%, rgba(var(--slate-900), 0.72) 100%);
   border: 1px solid rgba(var(--card-border), 0.24);
   backdrop-filter: blur(16px);
@@ -487,6 +495,25 @@ body::after {
     0 0 0 1px rgba(255, 255, 255, 0.06),
     0 14px 38px rgba(var(--card-shadow), 0.28);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+:root:not([data-theme='light']) .card-surface {
+  border-color: rgba(var(--card-border), 0.74);
+  box-shadow:
+    0 0 0 1px rgba(var(--border-visible-strong), 0.34),
+    0 14px 38px rgba(var(--card-shadow), 0.34);
+}
+
+:root:not([data-theme='light']) .card-surface::after {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
 }
 
 :root[data-theme='light'] .card-surface {
@@ -535,6 +562,26 @@ body::after {
   contain: layout style paint;
 }
 
+.glass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+:root:not([data-theme='light']) .glass-card {
+  border-color: rgba(var(--card-border), 0.74);
+  box-shadow:
+    0 0 0 1px rgba(var(--border-visible-strong), 0.33),
+    0 18px 44px rgba(var(--card-shadow), 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+:root:not([data-theme='light']) .glass-card::after {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+}
+
 :root[data-theme='light'] .glass-card {
   background: linear-gradient(152deg, rgba(255, 255, 255, 0.96) 0%, rgba(251, 253, 255, 0.9) 58%, rgba(244, 248, 255, 0.86) 100%);
   border: 1px solid rgba(var(--card-border), 0.34);
@@ -573,6 +620,10 @@ body::after {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   pointer-events: none;
+}
+
+:root:not([data-theme='light']) .glass-card::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
 }
 
 :root[data-theme='light'] .glass-card::before {
