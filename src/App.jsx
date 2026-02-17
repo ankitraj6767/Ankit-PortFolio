@@ -26,16 +26,6 @@ const getInitialTheme = () => {
   return initialTheme
 }
 
-const createStars = (count = 15) =>
-  [...Array(count)].map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 5}s`,
-    duration: `${4 + Math.random() * 4}s`,
-    size: `${1 + Math.random() * 2}px`,
-  }))
-
 const Page = ({ children }) => (
   <main className="flex flex-col gap-16 sm:gap-20 pt-20 sm:pt-24 pb-32 lg:pb-36">
     {children}
@@ -58,7 +48,6 @@ const NotFound = () => (
 
 const App = () => {
   const [theme, setTheme] = useState(getInitialTheme)
-  const [stars] = useState(() => createStars())
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -74,31 +63,6 @@ const App = () => {
       <div className="relative overflow-x-hidden min-h-screen flex flex-col">
         {/* SEO Helper for dynamic meta tags */}
         <SEOHelper />
-        
-        {/* Animated Background Elements */}
-        <div className="animated-top-border" />
-        <div className="orb-2" />
-        <div className="orb-3" />
-        <div className="spotlight" />
-        <div className="noise-overlay" />
-        
-        {/* Twinkling Stars */}
-        <div className="stars-container">
-          {stars.map((star) => (
-            <div
-              key={star.id}
-              className="star"
-              style={{
-                left: star.left,
-                top: star.top,
-                width: star.size,
-                height: star.size,
-                animationDelay: star.delay,
-                animationDuration: star.duration,
-              }}
-            />
-          ))}
-        </div>
         
         <ScrollToTop />
         <Navbar theme={theme} onToggleTheme={toggleTheme} />
