@@ -10,6 +10,7 @@ const Skills = () => {
         title="Technical toolbox"
         description="A balanced mix of backend strength, frontend craft, competitive programming, and the habits that keep teams moving."
         align="center"
+        as="h1"
       />
 
       <div 

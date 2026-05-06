@@ -11,17 +11,6 @@ const Hero = () => {
       className="section-container relative flex min-h-screen flex-col justify-center gap-3 pt-8 pb-8"
       aria-label="Ankit Raj - Software Development Engineer Portfolio"
     >
-      {/* Hidden SEO Content */}
-      <div className="sr-only" aria-hidden="true">
-        <h2>Ankit Raj - Software Development Engineer</h2>
-        <p>Ankit Raj is a Software Development Engineer at Blue Yonder India Private Limited. He specializes in Java, Spring Boot, React, Node.js, Kafka, MongoDB, and PostgreSQL.</p>
-        <meta itemProp="name" content="Ankit Raj" />
-        <meta itemProp="jobTitle" content="Software Development Engineer" />
-        <meta itemProp="email" content="araj803125@gmail.com" />
-        <meta itemProp="telephone" content="+91-6200667346" />
-        <meta itemProp="url" content="https://ankit-raj.in/" />
-      </div>
-
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div className="flex w-full max-w-3xl flex-col items-center gap-5 text-center">
           {/* Profile Image */}
@@ -58,9 +47,20 @@ const Hero = () => {
                 Software Engineer
               </span>
             </h1>
-            <p className="text-lg text-slate-300 justified-copy">
-              I design and ship resilient products with Spring Boot, React, and cloud tooling. From architecture to UI polish, I care about reliability, performance, and user trust.
+            <p className="text-lg text-slate-300 justified-copy" itemProp="description">
+              Official portfolio of Ankit Raj, GitHub @ankitraj6767 and Codeforces smartwinner. I design and ship resilient products with Spring Boot, React, Kafka, and cloud-ready tooling.
             </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-slate-200">
+            {['Blue Yonder SDE', 'NIT Silchar CSE', 'GitHub @ankitraj6767', 'Codeforces smartwinner'].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 shadow-sm shadow-cyan-500/5"
+              >
+                {item}
+              </span>
+            ))}
           </div>
 
           {/* Buttons */}

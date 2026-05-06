@@ -1,7 +1,7 @@
 {
-  "name": "Ankit Raj - Software Development Engineer Portfolio",
+  "name": "Ankit Raj - Official Software Engineering Portfolio",
   "short_name": "Ankit Raj",
-  "description": "Portfolio of Ankit Raj - Software Development Engineer at Blue Yonder, specializing in Java, Spring Boot, React, and Kafka. NIT Silchar CSE graduate.",
+  "description": "Official portfolio of Ankit Raj (@ankitraj6767), Software Development Engineer at Blue Yonder and NIT Silchar CSE graduate.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -31,7 +31,7 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Ankit Raj Portfolio Homepage"
+      "label": "Ankit Raj official portfolio homepage"
     }
   ],
   "shortcuts": [

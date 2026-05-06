@@ -12,6 +12,7 @@ const Projects = () => {
         title="Selected Work"
         description="A few projects that highlight how I think about UI polish, backend reliability, and developer experience."
         align="center"
+        as="h1"
       />
 
       <div 

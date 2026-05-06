@@ -13,7 +13,7 @@ Built with React, Vite, Tailwind CSS, and Framer Motion
 Deployed on Vercel/Netlify
 
 /* SITE */
-Last update: 2025/12/19
+Last update: 2026/05/06
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3, ES6+

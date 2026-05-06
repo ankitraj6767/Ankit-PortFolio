@@ -45,6 +45,7 @@ const Contact = () => {
         title="Let’s build together"
         description="Opportunities, collaborations, or mentorship chats—send a note and I’ll respond quickly."
         align="center"
+        as="h1"
       />
 
       <div 

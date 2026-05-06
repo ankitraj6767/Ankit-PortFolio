@@ -10,6 +10,7 @@ const Experience = () => {
         title="Career Journey"
         description="Highlights from roles where I shipped products, scaled systems, and collaborated with teams."
         align="center"
+        as="h1"
       />
 
       <div className="space-y-8">

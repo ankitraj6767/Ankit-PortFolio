@@ -10,6 +10,7 @@ const Education = () => {
         title="Academic Background"
         description="Formal education that grounds my engineering craft."
         align="center"
+        as="h1"
       />
 
       <div 

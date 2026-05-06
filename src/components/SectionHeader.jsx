@@ -1,5 +1,6 @@
-const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
+const SectionHeader = ({ eyebrow, title, description, align = 'left', as = 'h2' }) => {
   const isCenter = align === 'center'
+  const headingClassName = 'text-3xl sm:text-4xl font-semibold text-slate-50'
 
   return (
     <div
@@ -9,9 +10,11 @@ const SectionHeader = ({ eyebrow, title, description, align = 'left' }) => {
         <span className="h-px w-8 bg-gradient-to-r from-cyan-300/70 to-blue-400/70" />
         <span className="text-sm uppercase tracking-[0.2em] text-slate-400">{eyebrow}</span>
       </div>
-      <h2 className="text-3xl sm:text-4xl font-semibold text-slate-50">
-        {title}
-      </h2>
+      {as === 'h1' ? (
+        <h1 className={headingClassName}>{title}</h1>
+      ) : (
+        <h2 className={headingClassName}>{title}</h2>
+      )}
       {description && (
         <p className={`text-slate-400 max-w-2xl justified-copy ${isCenter ? 'mx-auto' : ''}`}>
           {description}

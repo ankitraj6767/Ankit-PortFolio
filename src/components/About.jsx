@@ -60,13 +60,14 @@ const About = () => {
         title="The engineer behind the code"
         description="I'm Ankit Raj, a software engineer who enjoys turning ideas into reliable, scalable software."
         align="center"
+        as="h1"
       />
 
       <div className="space-y-5">
         <div className="glass-card p-6 sm:p-7 shadow-lg shadow-cyan-500/5">
           <div className="space-y-4 text-slate-300 leading-relaxed text-justify">
             <p>
-              I'm a software engineer who loves building clean, efficient, and scalable applications. I enjoy working across the stack—from designing APIs and databases to crafting intuitive user interfaces. My focus is on code that not only works but is maintainable, readable, and built to last.
+              I'm Ankit Raj, a Software Development Engineer at Blue Yonder, GitHub @ankitraj6767, Codeforces smartwinner, and a Computer Science graduate from NIT Silchar. I enjoy working across the stack, from designing APIs and databases to crafting intuitive user interfaces.
             </p>
             <p>
               I spend most of my time building web apps and backend services, turning complex requirements into clear, modular systems. I care about clean architecture, solid naming, and abstractions that keep codebases healthy over time.
