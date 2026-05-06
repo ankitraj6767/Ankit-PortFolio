@@ -141,7 +141,7 @@ const writeRouteFile = async (route, baseHtml) => {
   const outputPath =
     route.path === '/'
       ? path.join(distDir, 'index.html')
-      : path.join(distDir, route.path.replace(/^\//, ''), 'index.html')
+      : path.join(distDir, 'seo-pages', `${route.path.replace(/^\//, '')}.html`)
 
   await mkdir(path.dirname(outputPath), { recursive: true })
   await writeFile(outputPath, html)

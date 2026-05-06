@@ -13,12 +13,12 @@ https://www.ankit-raj.in/* https://ankit-raj.in/:splat 301!
 /contact/ /contact 301!
 
 # Static route HTML generated after build
-/about /about/index.html 200
-/education /education/index.html 200
-/skills /skills/index.html 200
-/projects /projects/index.html 200
-/experience /experience/index.html 200
-/contact /contact/index.html 200
+/about /seo-pages/about.html 200
+/education /seo-pages/education.html 200
+/skills /seo-pages/skills.html 200
+/projects /seo-pages/projects.html 200
+/experience /seo-pages/experience.html 200
+/contact /seo-pages/contact.html 200
 
 # Legacy asset cleanup
 /vite.svg /favicon.svg 301!
