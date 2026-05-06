@@ -2,6 +2,8 @@ import { projects, socialLinks } from './content.js'
 
 export const SITE_URL = 'https://ankit-raj.in'
 export const LAST_MODIFIED = '2026-05-06'
+export const DATE_PUBLISHED = '2024-01-01T00:00:00+05:30'
+export const DATE_MODIFIED = '2026-05-06T00:00:00+05:30'
 export const PROFILE_IMAGE = `${SITE_URL}/profile.png`
 
 export const siteProfile = {
@@ -252,8 +254,8 @@ export const buildWebPageSchema = (route) => ({
   primaryImageOfPage: {
     '@id': `${SITE_URL}/#profile-image`,
   },
-  datePublished: '2024-01-01',
-  dateModified: LAST_MODIFIED,
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   inLanguage: 'en-IN',
 })
 
